@@ -1,6 +1,6 @@
 # Pacote de Aceleração de Trade · COOP × 75 LAB
 
-Apresentação comercial em HTML (22 telas) da **75 LAB** para a **COOP** — uma agenda
+Apresentação comercial em HTML (10 telas) da **75 LAB** para a **COOP** — uma agenda
 trimestral de oportunidades comerciais que transforma espaços, canais e calendário da
 rede em experiências vendáveis para a indústria.
 
@@ -14,7 +14,7 @@ rede em experiências vendáveis para a indústria.
 - Cursor desenhado (anel tracejado + ponteiro), ícones SVG com animação em loop,
   gráficos animados (hub, ciclo trimestral, matriz de priorização, curva de influência,
   barras de compensação, gantt de 90 dias), big numbers com count-up
-- Slides 02 e 03 apresentam a aceleradora 75 LAB
+- Telas 02 e 03 apresentam a aceleradora 75 LAB
 
 ## Navegação
 
@@ -28,4 +28,4 @@ rede em experiências vendáveis para a indústria.
 
 ## Fonte
 
-Condensado de `Apresentacao_Comercial_COOP_75LAB.pptx` (16 slides), agosto de 2026.
+Condensado de `Apresentacao_Comercial_COOP_75LAB.pptx` (16 slides) em 10 telas, agosto de 2026.
