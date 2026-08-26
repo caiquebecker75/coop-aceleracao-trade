@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacote de Aceleração de Trade · COOP × 75 LAB</title>
+<meta name="description" content="Uma agenda trimestral de oportunidades comerciais para transformar os espaços, canais e calendários da COOP em experiências vendáveis para a indústria.">
+<meta name="author" content="75 LAB">
+<meta name="theme-color" content="#0B214A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pacote de Aceleração de Trade · COOP × 75 LAB">
+<meta property="og:description" content="Não vendemos espaços. Entregamos acesso ao consumidor.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* COOP */
+  --navy:#0B214A; --navy-d:#06152F; --navy-l:#16336B; --navy-s:#1E4488;
+  --org:#F47A20;  --org-l:#FF9A3D;  --org-d:#D2610E;
+  --paper:#FFF8EF;--paper-d:#F1EADF;--line:#D9DEE8;
+  --ink:#101828;  --ink-2:#667085;  --ink-3:#8A93A5;
+  --gr:#155E45;
+  /* 75 LAB · cor da ação */
+  --lime:#C0EE4E; --lab-ink:#0A0A08;
+  --disp:'Archivo',Impact,sans-serif;
+  --body:'Space Grotesk',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+  --pad:clamp(20px,4.4vw,76px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--navy-d);color:var(--paper);font-family:var(--body);overflow:hidden;
+  -webkit-font-smoothing:antialiased;cursor:none}
+
+/* ══════════ CURSOR DESENHADO ══════════ */
+#cur,#dot,#ptr{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;will-change:transform}
+#cur,#dot{mix-blend-mode:difference}
+#cur{width:38px;height:38px;margin:-19px 0 0 -19px;
+  transition:width .24s cubic-bezier(.2,1.1,.3,1),height .24s cubic-bezier(.2,1.1,.3,1),margin .24s cubic-bezier(.2,1.1,.3,1),opacity .2s}
+#cur .rg{position:absolute;inset:0;border-radius:50%;border:1.5px solid #fff}
+#cur .dsh{position:absolute;inset:-7px;animation:cspin 9s linear infinite}
+#cur .dsh circle{fill:none;stroke:#fff;stroke-width:1.2;stroke-dasharray:2.4 7;opacity:.75}
+@keyframes cspin{to{transform:rotate(360deg)}}
+#dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;background:#fff;transition:opacity .2s,transform .16s}
+#ptr{width:15px;height:18px;margin:1px 0 0 1px;opacity:0;transform-origin:0 0;
+  transition:opacity .2s;filter:drop-shadow(0 2px 5px rgba(0,0,0,.5))}
+#ptr svg{width:100%;height:100%;display:block}
+body.hot #cur{width:60px;height:60px;margin:-30px 0 0 -30px}
+body.hot #dot{transform:scale(1.9)}
+body.hot #ptr{opacity:1}
+#cur.off,#dot.off,#ptr.off{opacity:0!important}
+@media (hover:none),(pointer:coarse){body{cursor:auto}#cur,#dot,#ptr{display:none}}
+
+/* ══════════ DECK ══════════ */
+.deck{position:fixed;inset:0}
+.s{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--navy);color:var(--paper);
+  padding:clamp(16px,2.6vw,34px) var(--pad) clamp(14px,2vw,26px);
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .38s ease,visibility .38s;
+  overflow:hidden auto;scrollbar-width:none}
+.s::-webkit-scrollbar{width:0}
+.s.on{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
+.s.deep{background:var(--navy-d)}
+.s.paper{background:var(--paper);color:var(--ink)}
+.s.org{background:var(--org);color:var(--navy-d)}
+.s.pic{padding:0;justify-content:flex-end}
+/* brilho cinematográfico de fundo */
+.s::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(58% 74% at 78% 12%,rgba(244,122,32,.22),transparent 66%),
+             radial-gradient(52% 62% at 6% 92%,rgba(30,68,136,.42),transparent 70%)}
+.s.on::before{animation:glow 1.5s ease forwards}
+@keyframes glow{to{opacity:1}}
+.s.paper::before{background:radial-gradient(56% 70% at 84% 8%,rgba(244,122,32,.13),transparent 64%),
+             radial-gradient(50% 58% at 4% 96%,rgba(11,33,74,.09),transparent 70%)}
+.s.org::before{background:radial-gradient(60% 76% at 82% 10%,rgba(255,248,239,.3),transparent 66%)}
+.s.pic::before{display:none}
+.s>*{position:relative;z-index:1}
+
+/* ══════════ RÉGUA / CABEÇALHO ══════════ */
+.meta{flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-family:var(--mono);font-size:clamp(8.4px,.72vw,11px);letter-spacing:.18em;text-transform:uppercase}
+.meta .l{opacity:.64}
+.meta .r{opacity:.64;text-align:right;white-space:nowrap}
+.hair{flex:none;height:1px;background:currentColor;opacity:.24;margin-top:clamp(6px,.8vw,11px)}
+.bar{flex:none;height:clamp(4px,.5vw,7px);background:var(--org);transform:scaleX(0);transform-origin:left}
+.s.org .bar{background:var(--navy-d)}
+.s.on .bar{animation:wipe .8s cubic-bezier(.2,.82,.24,1) .06s forwards}
+@keyframes wipe{to{transform:scaleX(1)}}
+.s.pic .meta,.s.pic .hair,.s.pic .bar{display:none}
+
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0;
+  padding:clamp(14px,3vw,52px) 0 clamp(10px,1.6vw,26px);gap:clamp(14px,2.4vw,40px)}
+
+/* ══════════ TIPOGRAFIA ══════════ */
+.mega{font-family:var(--disp);font-weight:900;font-stretch:125%;
+  font-size:clamp(34px,8.4vw,140px);line-height:.86;letter-spacing:-.036em;text-transform:uppercase}
+.mega.sm{font-size:clamp(28px,6.2vw,102px)}
+.mega.xs{font-size:clamp(23px,4.5vw,72px)}
+.mega.xxl{font-size:clamp(40px,10.4vw,176px)}
+.mega em{font-style:normal;color:var(--org)}
+.s.org .mega em{color:var(--paper)}
+.mega .pre{font-size:.34em;font-stretch:112%;letter-spacing:-.012em;margin-bottom:.12em;color:var(--org)}
+.s.org .mega .pre{color:var(--navy-d);opacity:.66}
+.ln{display:block;overflow:hidden;padding:.2em 0 .1em;margin:-.2em 0 -.1em}
+.ln>i{display:block;font-style:normal;transform:translateY(130%)}
+.s.on .ln>i{animation:lift .9s cubic-bezier(.16,.86,.26,1) forwards}
+.s.on .ln:nth-child(1)>i{animation-delay:.16s}.s.on .ln:nth-child(2)>i{animation-delay:.25s}
+.s.on .ln:nth-child(3)>i{animation-delay:.34s}.s.on .ln:nth-child(4)>i{animation-delay:.43s}
+.s.on .ln:nth-child(5)>i{animation-delay:.52s}.s.on .ln:nth-child(6)>i{animation-delay:.61s}
+@keyframes lift{to{transform:translateY(0)}}
+
+.say{font-size:clamp(13px,1.5vw,25px);line-height:1.34;font-weight:400;max-width:27ch;opacity:.84}
+.say b{font-weight:600;opacity:1;color:var(--org)}
+.s.org .say b{color:var(--navy-d)}
+.say.w{max-width:42ch}
+.say.sm{font-size:clamp(11.4px,1.15vw,18px);max-width:38ch}
+.tag{font-family:var(--mono);font-size:clamp(9px,.78vw,12px);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+.tag em{font-style:normal;color:var(--org);opacity:1}
+.s.org .tag em{color:var(--navy-d)}
+.s.org .cd .tag em{color:var(--org-d)}
+.disc{font-family:var(--mono);font-size:clamp(8px,.68vw,10.4px);letter-spacing:.14em;text-transform:uppercase;opacity:.44}
+
+/* faixa de destaque */
+.kicker{display:inline-block;align-self:flex-start;background:var(--org);color:var(--navy-d);
+  font-family:var(--disp);font-weight:800;font-stretch:112%;text-transform:uppercase;
+  font-size:clamp(10px,1vw,16px);letter-spacing:.02em;padding:.42em .82em;border-radius:3px}
+.kicker.lm{background:var(--lime);color:var(--lab-ink)}
+.kicker.nv{background:var(--navy);color:var(--paper)}
+
+/* ══════════ NÚMEROS GIGANTES ══════════ */
+.num{font-family:var(--disp);font-weight:900;font-stretch:125%;line-height:.76;letter-spacing:-.055em;
+  font-size:clamp(90px,20vw,320px);color:var(--org)}
+.s.org .num{color:var(--navy-d)}
+.num u{text-decoration:none;font-size:.26em;letter-spacing:.02em;font-stretch:100%;vertical-align:.6em;margin-left:.05em}
+.num.mid{font-size:clamp(54px,11vw,178px)}
+.num.sm{font-size:clamp(38px,6.6vw,104px)}
+.num .pfx{font-style:normal;font-size:.26em;font-stretch:100%;letter-spacing:-.01em;vertical-align:.7em;margin-right:.12em;opacity:.6}
+.bn{display:flex;flex-direction:column;gap:clamp(4px,.5vw,9px)}
+.bn .lb{font-family:var(--mono);font-size:clamp(9px,.76vw,12px);letter-spacing:.16em;text-transform:uppercase;opacity:.6;max-width:20ch}
+
+/* ══════════ LINHAS DE DADOS ══════════ */
+.rows{display:flex;flex-direction:column;width:100%}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:clamp(9px,1.15vw,19px) 0;border-top:1px solid currentColor;position:relative;transition:.2s}
+.row:first-child{border-top-width:2px}
+.row:last-child{border-bottom:1px solid currentColor}
+.row:hover{padding-left:9px}
+.row .k{font-family:var(--mono);font-size:clamp(9px,.76vw,12px);letter-spacing:.16em;text-transform:uppercase;opacity:.62}
+.row .v{font-family:var(--disp);font-weight:800;font-stretch:112%;font-size:clamp(15px,1.8vw,30px);letter-spacing:-.02em;text-align:right}
+.row .v em{font-style:normal;color:var(--org)}
+.s.org .row .v em{color:var(--paper)}
+.rows.thin .row{padding:clamp(6px,.75vw,12px) 0}
+.s.on .rows>*{animation:fadeup .62s cubic-bezier(.2,.85,.3,1) backwards}
+.s.on .rows>*:nth-child(1){animation-delay:.34s}.s.on .rows>*:nth-child(2){animation-delay:.42s}
+.s.on .rows>*:nth-child(3){animation-delay:.50s}.s.on .rows>*:nth-child(4){animation-delay:.58s}
+.s.on .rows>*:nth-child(5){animation-delay:.66s}.s.on .rows>*:nth-child(6){animation-delay:.74s}
+@keyframes fadeup{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+
+/* ══════════ GRIDS ══════════ */
+.g{display:grid;gap:clamp(14px,2.2vw,44px)}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(3,1fr)}
+.sp{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(18px,3.4vw,70px);align-items:center}
+.sp-a{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(18px,3.4vw,70px);align-items:center}
+.stack{display:flex;flex-direction:column;gap:clamp(8px,1.1vw,18px)}
+.s.on .fu{animation:fadeup .7s cubic-bezier(.2,.85,.3,1) backwards}
+.s.on .fu:nth-child(1){animation-delay:.28s}.s.on .fu:nth-child(2){animation-delay:.36s}
+.s.on .fu:nth-child(3){animation-delay:.44s}.s.on .fu:nth-child(4){animation-delay:.52s}
+.s.on .fu:nth-child(5){animation-delay:.60s}.s.on .fu:nth-child(6){animation-delay:.68s}
+
+/* ══════════ CARDS ══════════ */
+.cd{display:flex;flex-direction:column;gap:clamp(7px,.85vw,14px);padding:clamp(13px,1.5vw,25px);
+  border-radius:clamp(9px,1vw,16px);background:rgba(255,248,239,.055);
+  box-shadow:inset 0 0 0 1px rgba(255,248,239,.15);transition:transform .38s cubic-bezier(.2,.9,.3,1),background .3s,box-shadow .3s}
+.s.paper .cd{background:rgba(11,33,74,.035);box-shadow:inset 0 0 0 1px rgba(11,33,74,.13)}
+.s.org .cd{background:rgba(255,248,239,.26);box-shadow:inset 0 0 0 1px rgba(6,21,47,.16)}
+.cd:hover{transform:translateY(-6px);background:rgba(244,122,32,.11);box-shadow:inset 0 0 0 1px var(--org)}
+.cd .t{font-family:var(--disp);font-weight:800;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(13px,1.5vw,25px);line-height:1.02;letter-spacing:-.022em}
+.cd .d{font-size:clamp(10.4px,.94vw,15px);line-height:1.42;opacity:.72}
+.cd .n{font-family:var(--mono);font-size:clamp(9px,.74vw,11.6px);letter-spacing:.18em;color:var(--org);opacity:.9}
+.s.org .cd .n{color:var(--navy-d)}
+.cd.hl{background:var(--org);color:var(--navy-d);box-shadow:none}
+.cd.hl .d{opacity:.82}.cd.hl .n{color:var(--navy-d);opacity:.62}
+.cd.hl:hover{background:var(--org-l);box-shadow:none}
+.cd.lm{background:var(--lime);color:var(--lab-ink);box-shadow:none}
+.cd.lm .d{opacity:.78}.cd.lm .n{color:var(--lab-ink);opacity:.55}
+
+/* ══════════ ÍCONES ══════════ */
+.ic{width:clamp(30px,3.1vw,50px);height:clamp(30px,3.1vw,50px);color:var(--org);flex:none}
+.ic svg{width:100%;height:100%;display:block}
+.ic.big{width:clamp(42px,4.6vw,76px);height:clamp(42px,4.6vw,76px)}
+.ic.sm{width:clamp(20px,1.9vw,30px);height:clamp(20px,1.9vw,30px)}
+.s.org .ic{color:var(--navy-d)}
+.cd.hl .ic,.cd.lm .ic{color:currentColor}
+/* loops */
+@keyframes ibob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.6px)}}
+@keyframes ipulse{0%,100%{opacity:.32}50%{opacity:1}}
+@keyframes iring{0%{transform:scale(.5);opacity:.85}100%{transform:scale(1.55);opacity:0}}
+@keyframes iflow{to{stroke-dashoffset:-34}}
+@keyframes ispin{to{transform:rotate(360deg)}}
+@keyframes idraw{0%{stroke-dashoffset:var(--dl)}55%,100%{stroke-dashoffset:0}}
+@keyframes iswing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes irise{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+@keyframes iblink{0%,88%,100%{opacity:1}92%{opacity:.15}}
+.i-bob{animation:ibob 2.4s ease-in-out infinite}
+.i-pulse{animation:ipulse 1.9s ease-in-out infinite;transform-origin:center}
+.i-ring{animation:iring 2.3s ease-out infinite;transform-origin:center}
+.i-flow{stroke-dasharray:6 5;animation:iflow 1.5s linear infinite}
+.i-spin{animation:ispin 8s linear infinite;transform-origin:center}
+.i-draw{stroke-dasharray:var(--dl);animation:idraw 3s ease-in-out infinite}
+.i-swing{animation:iswing 2.6s ease-in-out infinite;transform-origin:50% 22%}
+.i-rise{animation:irise 2s ease-in-out infinite;transform-origin:50% 100%}
+.i-blink{animation:iblink 3.4s linear infinite}
+.i-d1{animation-delay:.25s}.i-d2{animation-delay:.5s}.i-d3{animation-delay:.75s}.i-d4{animation-delay:1s}
+
+/* ══════════ SEQUÊNCIA / PASSOS ══════════ */
+.steps{display:grid;gap:clamp(13px,2vw,40px)}
+.step{display:flex;flex-direction:column;gap:clamp(6px,.8vw,13px);transition:transform .45s cubic-bezier(.2,.9,.3,1)}
+.step .n{font-family:var(--mono);font-size:clamp(9px,.76vw,12px);letter-spacing:.18em;opacity:.5;transition:opacity .35s}
+.step .t{font-family:var(--disp);font-weight:800;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(14px,1.7vw,29px);line-height:1.02;letter-spacing:-.022em;transition:color .35s}
+.step .d{font-size:clamp(10.4px,.92vw,15px);line-height:1.42;opacity:.68;max-width:23ch;transition:opacity .35s}
+.step .bl{position:relative;height:3px;background:currentColor;opacity:.18;overflow:hidden;border-radius:2px}
+.step .bl>i{position:absolute;inset:0;background:var(--org);transform:scaleX(0);transform-origin:left;
+  transition:transform .66s cubic-bezier(.2,.82,.24,1)}
+.step.act .bl{opacity:1}
+.step.act .bl>i,.step.done .bl>i{transform:scaleX(1)}
+.step.done .bl{opacity:.5}
+.step .ic{opacity:.38;transition:opacity .35s,transform .45s cubic-bezier(.2,1.1,.3,1)}
+.step.act .ic{opacity:1;transform:scale(1.14)}
+.step.done .ic{opacity:.66}
+.step.act .n{opacity:.92}.step.act .d{opacity:.95}
+.step.act .t{color:var(--org)}
+.s.org .step.act .t,.s.org .step .bl>i{color:var(--navy-d);background:var(--navy-d)}
+
+/* ══════════ CTA ══════════ */
+.cta{display:inline-flex;align-items:center;gap:clamp(9px,1vw,16px);align-self:flex-start;
+  background:var(--lime);color:var(--lab-ink);border:none;cursor:none;
+  font-family:var(--disp);font-weight:800;font-stretch:112%;text-transform:uppercase;
+  font-size:clamp(11.5px,1.12vw,19px);letter-spacing:-.005em;
+  padding:clamp(11px,1.15vw,20px) clamp(18px,1.9vw,34px);border-radius:999px;
+  transition:transform .22s cubic-bezier(.2,1.1,.3,1),box-shadow .22s,background .18s}
+.cta:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(0,0,0,.6)}
+.cta:active{transform:translateY(0)}
+.cta .ar{width:1.05em;height:1.05em;flex:none}
+.cta .ar svg{width:100%;height:100%;display:block}
+.cta.or{background:var(--org);color:var(--navy-d)}
+.cta.gh{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.cta.gh:hover{background:var(--paper);color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--paper)}
+.s.paper .cta.gh:hover{background:var(--ink);color:var(--paper);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.s.org .cta.gh:hover{background:var(--navy-d);color:var(--paper);box-shadow:inset 0 0 0 1.5px var(--navy-d)}
+.ctas{display:flex;gap:clamp(9px,1.1vw,18px);flex-wrap:wrap;align-items:center}
+.s.on .cta{animation:fadeup .6s cubic-bezier(.2,.85,.3,1) .6s backwards}
+
+/* ══════════ CHIPS ══════════ */
+.chips{display:flex;flex-wrap:wrap;gap:clamp(6px,.7vw,12px)}
+.chip{font-family:var(--mono);font-size:clamp(9px,.78vw,12.4px);letter-spacing:.12em;text-transform:uppercase;
+  padding:clamp(6px,.62vw,10px) clamp(11px,1.05vw,18px);border-radius:999px;
+  box-shadow:inset 0 0 0 1px currentColor;opacity:.68;transition:.22s;white-space:nowrap}
+.chip:hover{opacity:1;background:var(--paper);color:var(--navy);box-shadow:inset 0 0 0 1px var(--paper);transform:translateY(-2px)}
+.s.paper .chip:hover{background:var(--ink);color:var(--paper);box-shadow:inset 0 0 0 1px var(--ink)}
+.chip.on{opacity:1;background:var(--org);color:var(--navy-d);box-shadow:none}
+.chip.on:hover{color:var(--navy-d);background:var(--org-l)}
+.chip.lm{opacity:1;background:var(--lime);color:var(--lab-ink);box-shadow:none}
+.chip.lm:hover{color:var(--lab-ink);background:var(--lime)}
+
+/* ══════════ RODAPÉ ══════════ */
+.fo{flex:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  border-top:1px solid currentColor;padding-top:clamp(8px,.95vw,14px)}
+.fo .bd{display:flex;align-items:center;gap:clamp(8px,.9vw,15px);opacity:.78}
+.fo .bd img{height:clamp(10px,1vw,14px);width:auto;display:block}
+.fo .bd .x{font-family:var(--mono);font-size:clamp(8px,.7vw,10.4px);opacity:.55}
+.fo .bd span.n{font-family:var(--mono);font-size:clamp(8px,.7vw,10.4px);letter-spacing:.18em}
+.nav{display:flex;align-items:center;gap:clamp(6px,.75vw,12px)}
+.nb{width:clamp(26px,2.3vw,34px);height:clamp(26px,2.3vw,34px);border-radius:50%;cursor:none;
+  background:transparent;color:currentColor;box-shadow:inset 0 0 0 1px currentColor;
+  display:grid;place-items:center;transition:.2s;opacity:.72}
+.nb svg{width:42%;height:42%}
+.nb:hover{opacity:1;background:var(--org);color:var(--navy-d);box-shadow:none;transform:scale(1.12)}
+.pg{font-family:var(--mono);font-size:clamp(9px,.78vw,12px);letter-spacing:.14em;min-width:5.4em;text-align:center;opacity:.72}
+.pg b{opacity:1}
+.mbtn{background:none;border:none;cursor:none;color:currentColor;font-family:var(--mono);
+  font-size:clamp(8.6px,.72vw,11px);letter-spacing:.18em;text-transform:uppercase;opacity:.6;transition:.2s;
+  display:flex;align-items:center;gap:.6em}
+.mbtn:hover{opacity:1;color:var(--org)}
+.mbtn svg{width:1.1em;height:1.1em}
+
+/* ══════════ PROGRESSO ══════════ */
+.pro{position:fixed;top:0;left:0;height:3px;width:0;background:var(--org);z-index:200;
+  transition:width .55s cubic-bezier(.2,.85,.3,1);box-shadow:0 0 14px rgba(244,122,32,.7)}
+
+/* ══════════ FOTO EM SANGRIA ══════════ */
+.pic .img{position:absolute;inset:0;overflow:hidden}
+.pic .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
+.s.pic.on .img img{animation:kb 9s cubic-bezier(.2,.6,.3,1) forwards}
+@keyframes kb{to{transform:scale(1)}}
+.pic .scrim{position:absolute;inset:0;background:
+  linear-gradient(80deg,rgba(6,21,47,.96) 12%,rgba(6,21,47,.62) 46%,rgba(6,21,47,.05) 88%),
+  linear-gradient(0deg,rgba(6,21,47,.94) 0,rgba(6,21,47,.4) 17%,transparent 36%)}
+.pic .cap{position:relative;z-index:2;padding:var(--pad);width:100%;display:flex;flex-direction:column;gap:clamp(10px,1.4vw,22px)}
+.pic .fo{position:relative;z-index:2;margin:0 var(--pad) clamp(14px,2vw,26px)}
+.shot{position:relative;overflow:hidden;background:var(--navy-d);border-radius:4px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.16,.86,.26,1)}
+.shot:hover img{transform:scale(1.05)}
+.s.on .shot{animation:rise .85s cubic-bezier(.16,.86,.26,1) .2s backwards}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.shot .cp{position:absolute;left:0;top:0;padding:.9em 1.05em;z-index:2;
+  font-family:var(--mono);font-size:clamp(7.4px,.66vw,10px);letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,248,239,.94);text-shadow:0 1px 12px rgba(6,21,47,.95)}
+.gal{display:grid;gap:clamp(7px,.9vw,15px)}
+
+/* ══════════ SVG · GRÁFICOS ══════════ */
+.fig{width:100%;position:relative}
+.fig svg{width:100%;height:auto;display:block;overflow:visible}
+.ax{stroke:currentColor;opacity:.28;stroke-width:1}
+.axd{stroke:currentColor;opacity:.16;stroke-width:1;stroke-dasharray:3 5}
+.axl{font-family:'Space Mono',monospace;font-size:7.4px;letter-spacing:.14em;text-transform:uppercase;
+  fill:currentColor;opacity:.5}
+.axt{font-family:'Archivo',sans-serif;font-weight:800;font-size:9.6px;fill:currentColor;letter-spacing:-.01em}
+/* traço que se desenha ao entrar */
+.dr{stroke-dasharray:var(--dl);stroke-dashoffset:var(--dl)}
+.s.on .dr{animation:drw 1.5s cubic-bezier(.3,.8,.3,1) .35s forwards}
+@keyframes drw{to{stroke-dashoffset:0}}
+/* barras que sobem */
+.s.on .gb{animation:gbup .9s cubic-bezier(.2,.85,.3,1) backwards;transform-origin:50% 100%}
+@keyframes gbup{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+/* bolhas da matriz */
+.bub{cursor:none;transition:.3s}
+.bub:hover .bc{filter:brightness(1.12)}
+.s.on .bub{animation:pop .7s cubic-bezier(.2,1.25,.35,1) backwards;transform-box:fill-box;transform-origin:center}
+@keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+.bhalo{animation:bhalo 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes bhalo{0%{transform:scale(.85);opacity:.55}100%{transform:scale(1.55);opacity:0}}
+.spark{stroke-dasharray:4 4;animation:iflow 1.6s linear infinite}
+/* pontinho que corre a linha */
+.runner{animation:runner 4.5s linear infinite}
+@keyframes runner{to{motion-offset:100%;offset-distance:100%}}
+
+/* anel/gauge */
+.ring-bg{fill:none;stroke:currentColor;opacity:.16;stroke-width:9}
+.ring-fg{fill:none;stroke:var(--org);stroke-width:9;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center}
+.s.on .ring-fg{stroke-dasharray:var(--dl);stroke-dashoffset:var(--dl);animation:drw 1.6s cubic-bezier(.3,.85,.3,1) .4s forwards}
+
+/* ══════════ TIMELINE / GANTT ══════════ */
+.gantt{display:flex;flex-direction:column;gap:clamp(7px,.85vw,14px)}
+.gr{display:grid;grid-template-columns:clamp(74px,9vw,150px) 1fr;gap:clamp(10px,1.4vw,24px);align-items:center}
+.gr .gk{font-family:var(--mono);font-size:clamp(8.4px,.72vw,11.4px);letter-spacing:.14em;text-transform:uppercase;opacity:.62}
+.gt{position:relative;height:clamp(28px,3vw,50px);background:rgba(255,248,239,.07);border-radius:4px;overflow:hidden}
+.s.paper .gt{background:rgba(11,33,74,.055)}
+.gt>i{position:absolute;top:0;bottom:0;background:var(--org);border-radius:4px;display:flex;align-items:center;
+  padding:0 clamp(8px,.9vw,15px);transform:scaleX(0);transform-origin:left;overflow:hidden;
+  font-family:var(--disp);font-weight:800;font-stretch:112%;font-size:clamp(9.4px,.88vw,14px);
+  color:var(--navy-d);text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
+.s.on .gt>i{animation:gx .9s cubic-bezier(.2,.85,.3,1) both}
+@keyframes gx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.s.on .gr:nth-child(1) .gt>i{animation-delay:.35s}.s.on .gr:nth-child(2) .gt>i{animation-delay:.5s}
+.s.on .gr:nth-child(3) .gt>i{animation-delay:.65s}.s.on .gr:nth-child(4) .gt>i{animation-delay:.8s}
+.gt>i.a{background:var(--org)}.gt>i.b{background:var(--org-l)}
+.gt>i.c{background:var(--lime);color:var(--lab-ink)}.gt>i.d{background:var(--paper);color:var(--navy-d)}
+
+/* ══════════ FLUXO HORIZONTAL ══════════ */
+.flow{display:flex;align-items:stretch;gap:0;width:100%}
+.fnode{flex:1;display:flex;flex-direction:column;gap:clamp(6px,.8vw,12px);padding:clamp(10px,1.3vw,22px) clamp(9px,1.1vw,20px);
+  position:relative;transition:background .35s}
+.fnode+.fnode{border-left:1px solid rgba(255,248,239,.22)}
+.s.paper .fnode+.fnode{border-left-color:rgba(11,33,74,.16)}
+.s.org .fnode+.fnode{border-left-color:rgba(6,21,47,.2)}
+.fnode .fn{font-family:var(--disp);font-weight:900;font-stretch:125%;font-size:clamp(20px,2.6vw,44px);
+  line-height:.86;color:var(--org);opacity:.34;transition:opacity .35s,color .35s}
+.fnode .ft{font-family:var(--disp);font-weight:800;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(12px,1.35vw,22px);line-height:1.04;letter-spacing:-.02em}
+.fnode .fd{font-size:clamp(9.8px,.88vw,14px);line-height:1.4;opacity:.66}
+.fnode.act{background:rgba(244,122,32,.12)}
+.fnode.act .fn{opacity:1}
+.s.org .fnode .fn{color:var(--navy-d)}
+@media(max-width:900px){.flow{flex-direction:column}.fnode+.fnode{border-left:none;border-top:1px solid currentColor}}
+
+/* ══════════ COLUNAS DE RESPONSABILIDADE ══════════ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,48px);align-items:start}
+.duo .hd{display:flex;align-items:center;gap:clamp(8px,1vw,16px);padding-bottom:clamp(8px,1vw,15px);
+  border-bottom:2px solid currentColor;margin-bottom:clamp(8px,1.1vw,18px)}
+.duo .hd b{font-family:var(--disp);font-weight:900;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(15px,1.9vw,32px);letter-spacing:-.028em}
+.li{display:flex;gap:clamp(8px,.9vw,15px);align-items:flex-start;padding:clamp(6px,.72vw,12px) 0;
+  font-size:clamp(10.6px,.98vw,16px);line-height:1.36;opacity:.82;transition:.2s}
+.li:hover{opacity:1;transform:translateX(4px)}
+.li .bt{width:.5em;height:.5em;border-radius:50%;background:var(--org);flex:none;margin-top:.5em}
+.s.org .li .bt{background:var(--navy-d)}
+.li.lm .bt{background:var(--lime)}
+@media(max-width:900px){.duo{grid-template-columns:1fr}}
+
+/* ══════════ ÍNDICE ══════════ */
+.menu{position:fixed;inset:0;background:var(--navy-d);z-index:300;display:none;
+  padding:clamp(24px,4.6vw,72px) var(--pad);overflow:auto}
+.menu.open{display:flex;flex-direction:column;animation:mf .3s ease}
+@keyframes mf{from{opacity:0}to{opacity:1}}
+.mh{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(16px,2.4vw,38px)}
+.mh .t{font-family:var(--disp);font-weight:900;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(16px,2vw,32px);letter-spacing:-.03em;color:var(--paper)}
+.mh button{background:none;border:none;cursor:none;color:var(--paper);font-family:var(--mono);
+  font-size:clamp(9px,.8vw,12px);letter-spacing:.18em;text-transform:uppercase;opacity:.6;transition:.2s}
+.mh button:hover{opacity:1;color:var(--org)}
+.ml{list-style:none;columns:2;column-gap:clamp(24px,4vw,80px)}
+@media(max-width:800px){.ml{columns:1}}
+.ml li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;cursor:none;
+  padding:clamp(6px,.72vw,11px) 0;border-bottom:1px solid rgba(255,248,239,.13);break-inside:avoid;transition:.16s}
+.ml li:hover{padding-left:10px;border-color:var(--org)}
+.ml li:hover .tt{color:var(--org)}
+.ml .nn{font-family:var(--mono);font-size:clamp(8.6px,.72vw,11px);color:rgba(255,248,239,.4);letter-spacing:.14em}
+.ml .tt{font-size:clamp(11px,.98vw,15.4px);color:rgba(255,248,239,.82);text-align:right;transition:.16s}
+.ml li.hd .tt{font-family:var(--disp);font-weight:900;font-stretch:118%;text-transform:uppercase;color:var(--paper);letter-spacing:-.01em}
+.ml li.hd .nn{color:var(--org)}
+
+/* ══════════ RESPONSIVO ══════════ */
+@media(max-width:900px){
+  .sp,.sp-a,.g2,.g3,.g4,.g6{grid-template-columns:1fr}
+  .g4.keep,.g6.keep{grid-template-columns:repeat(2,1fr)}
+  .body{gap:20px}
+  .say{max-width:36ch}
+  .pic .scrim{background:linear-gradient(0deg,rgba(6,21,47,.97) 26%,rgba(6,21,47,.52) 66%,rgba(6,21,47,.12) 100%)}
+}
+@media print{
+  body{overflow:visible;cursor:auto}#cur,#dot,#ptr,.pro,.menu{display:none}
+  .deck{position:static}
+  .s{position:relative;inset:auto;opacity:1!important;visibility:visible!important;page-break-after:always;height:100vh}
+  .s *{animation:none!important;transform:none!important}
+  .s::before{opacity:1}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+:focus-visible{outline:3px solid var(--org);outline-offset:3px}
+
+/* ══════════ CICLO TRIMESTRAL (SVG) ══════════ */
+.cyc{opacity:.2;transition:opacity .45s ease}
+.cyc.hot{opacity:1}
+/* nós do hub aparecem em cascata */
+.s.on .hubn>g{animation:fadeup .6s cubic-bezier(.2,.85,.3,1) backwards}
+.s.on .hubn>g:nth-child(1){animation-delay:.4s}.s.on .hubn>g:nth-child(2){animation-delay:.48s}
+.s.on .hubn>g:nth-child(3){animation-delay:.56s}.s.on .hubn>g:nth-child(4){animation-delay:.64s}
+.s.on .hubn>g:nth-child(5){animation-delay:.72s}.s.on .hubn>g:nth-child(6){animation-delay:.80s}
+.s.on .hubn>g:nth-child(7){animation-delay:.88s}.s.on .hubn>g:nth-child(8){animation-delay:.96s}
+.s.paper .hubn rect{fill:rgba(11,33,74,.05)}
+</style>
+</head>
+<body>
+<div class="pro" id="pro"></div>
+<div id="cur"><span class="rg"></span><svg class="dsh" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/></svg></div>
+<div id="dot"></div>
+<div id="ptr"><svg viewBox="0 0 15 18" fill="none"><path d="M1.2 1.1 13 9.4l-5 .9 2.6 5.4-2.3 1.1L5.7 11l-4.5 3z" fill="#F47A20" stroke="#FFF8EF" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+
+<!-- ══════════ BIBLIOTECA DE ÍCONES ANIMADOS ══════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="m13.5 6 6 6-6 6"/></symbol>
+<symbol id="al" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><path d="m10.5 6-6 6 6 6"/></symbol>
+<symbol id="mn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h12"/></symbol>
+
+<symbol id="k-cal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3.5" y="6" width="25" height="22.5" rx="3"/><path d="M3.5 13h25"/>
+  <path class="i-bob" d="M10 3v5.4M22 3v5.4"/>
+  <rect x="8" y="17" width="5" height="4.4" rx="1" fill="currentColor" stroke="none" class="i-pulse"/>
+  <rect x="19" y="17" width="5" height="4.4" rx="1" fill="currentColor" stroke="none" class="i-pulse i-d2"/></symbol>
+
+<symbol id="k-store" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 13v14.5h24V13"/><path d="M2 12.5 5 4.5h22l3 8a4 4 0 0 1-7 2.6 4 4 0 0 1-7 0 4 4 0 0 1-7 0 4 4 0 0 1-7-2.6Z" class="i-bob"/>
+  <path d="M12.5 27.5V19h7v8.5"/></symbol>
+
+<symbol id="k-target" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+  <circle cx="16" cy="16" r="12.5"/><circle cx="16" cy="16" r="7" class="i-pulse"/>
+  <circle cx="16" cy="16" r="12" class="i-ring" opacity=".5"/><circle cx="16" cy="16" r="2.5" fill="currentColor" stroke="none"/></symbol>
+
+<symbol id="k-chart" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.5 29h27"/>
+  <rect x="4.5" y="18" width="5" height="11" rx="1.4" fill="currentColor" stroke="none" class="i-rise"/>
+  <rect x="13.5" y="12" width="5" height="17" rx="1.4" fill="currentColor" stroke="none" class="i-rise i-d1"/>
+  <rect x="22.5" y="5" width="5" height="24" rx="1.4" fill="currentColor" stroke="none" class="i-rise i-d2"/></symbol>
+
+<symbol id="k-cart" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.5 4H6l3.2 15.2a2.4 2.4 0 0 0 2.4 1.9h11.3a2.4 2.4 0 0 0 2.4-1.9L28 9.2H7.4"/>
+  <circle cx="12.5" cy="27" r="2.1" class="i-pulse"/><circle cx="24" cy="27" r="2.1" class="i-pulse i-d2"/></symbol>
+
+<symbol id="k-tag" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-swing"><path d="M16.6 2.8H28a1.4 1.4 0 0 1 1.4 1.4v11.4a2.8 2.8 0 0 1-.8 2L16.4 29.1a1.4 1.4 0 0 1-2 0L2.9 17.6a1.4 1.4 0 0 1 0-2L15.1 3.6a2.8 2.8 0 0 1 1.5-.8Z"/>
+  <circle cx="23" cy="9" r="2.4" fill="currentColor" stroke="none" class="i-pulse"/></g></symbol>
+
+<symbol id="k-box" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-bob"><path d="M28.5 10.5v11.6a2.4 2.4 0 0 1-1.3 2.1l-10 5.1a2.4 2.4 0 0 1-2.4 0l-10-5.1a2.4 2.4 0 0 1-1.3-2.1V10.5"/>
+  <path d="m3.5 10 12.5 6.4L28.5 10 16 3.6 3.5 10Z"/><path d="M16 16.4V29"/></g></symbol>
+
+<symbol id="k-truck" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.5 6.5h15v15h-15z"/><path d="M17.5 12h5.6l4.4 4.6v4.9h-10z"/>
+  <circle cx="9" cy="25" r="2.6"/><circle cx="23" cy="25" r="2.6"/>
+  <path class="i-flow" d="M2 10H-3M2 15h-6"/></symbol>
+
+<symbol id="k-team" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="10" r="5" class="i-bob"/><path d="M2.5 27.5a9.5 9.5 0 0 1 19 0"/>
+  <path d="M22 6.4a5 5 0 0 1 0 9.2M24.5 27.5a9.6 9.6 0 0 0-3.2-7.2" class="i-pulse i-d2"/></symbol>
+
+<symbol id="k-cam" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 9.5h5.6l2.2-3.4h10.4l2.2 3.4H29v17H3z"/>
+  <circle cx="16" cy="17.6" r="5.4"/><circle cx="16" cy="17.6" r="5.4" class="i-ring" opacity=".55"/>
+  <circle cx="25.5" cy="12.6" r="1" fill="currentColor" stroke="none" class="i-blink"/></symbol>
+
+<symbol id="k-doc" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 2.5H8a3 3 0 0 0-3 3v21a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V11.5z"/><path d="M18 2.5v9h9"/>
+  <path d="M10.5 17.5h11" class="i-flow"/><path d="M10.5 22h7" class="i-flow i-d2"/></symbol>
+
+<symbol id="k-hand" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-bob"><path d="M2.5 12.5 8 7.5l5.5 4.2 4-1.4 4.6 3.6"/><path d="M29.5 12.5 24 7.5l-4.4 3.4"/>
+  <path d="M13.5 11.7 9 16.4a2.3 2.3 0 0 0 3.2 3.3l1.6-1.5 3 2.9a2.2 2.2 0 0 0 3.2-3l2 1.9a2.2 2.2 0 0 0 3.1-3.1"/></g>
+  <circle cx="16" cy="16" r="13" class="i-ring" opacity=".3"/></symbol>
+
+<symbol id="k-bulb" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 3a9.5 9.5 0 0 0-5.6 17.2c1 .8 1.6 1.9 1.6 3.1v.7h8v-.7c0-1.2.6-2.3 1.6-3.1A9.5 9.5 0 0 0 16 3Z" class="i-pulse"/>
+  <path d="M12.5 27h7M14 30h4"/><path d="M16 2v-2M28 12h2.5M3.5 12H1M25 4.5l1.8-1.8M7 4.5 5.2 2.7" class="i-pulse i-d2"/></symbol>
+
+<symbol id="k-cycle" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-spin"><path d="M28 16a12 12 0 0 1-12 12A12 12 0 0 1 4.6 20"/><path d="M4 16A12 12 0 0 1 16 4a12 12 0 0 1 11.4 8"/></g>
+  <path d="M28 5.5V12h-6.5M4 26.5V20h6.5"/>
+  <circle cx="16" cy="16" r="3" fill="currentColor" stroke="none" class="i-pulse"/></symbol>
+
+<symbol id="k-screen" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="4" width="27" height="18.5" rx="2.6"/><path d="M11 28h10M16 22.5V28"/>
+  <path d="M7.5 16.5 12 11l4 4 4.5-6 4 7.5" class="i-flow"/></symbol>
+
+<symbol id="k-mail" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="6.5" width="27" height="19" rx="2.6" class="i-bob"/><path d="m3.5 8.5 12.5 9 12.5-9"/>
+  <circle cx="26" cy="7" r="3.4" fill="currentColor" stroke="none" class="i-pulse"/></symbol>
+
+<symbol id="k-pin" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-bob"><path d="M16 2.5c-5.5 0-10 4.4-10 9.9 0 7.4 10 17.1 10 17.1s10-9.7 10-17.1c0-5.5-4.5-9.9-10-9.9Z"/>
+  <circle cx="16" cy="12.4" r="3.8" class="i-pulse"/></g></symbol>
+
+<symbol id="k-rocket" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-bob"><path d="M19.5 4.5c4.6 3.4 7 8.6 7 15.1L20 25.5h-8L5.5 19.6c0-6.5 2.4-11.7 7-15.1a5 5 0 0 1 7 0Z"/>
+  <circle cx="16" cy="13" r="3.4" class="i-pulse"/></g>
+  <path d="M13 25.5c-.6 2.4-.4 4 1 5.2M19 25.5c.6 2.4.4 4-1 5.2" class="i-pulse i-d1"/></symbol>
+
+<symbol id="k-layers" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m16 2.5 13.5 7-13.5 7-13.5-7z" class="i-bob"/>
+  <path d="m2.5 16 13.5 7 13.5-7" class="i-bob i-d1"/><path d="m2.5 22.5 13.5 7 13.5-7" class="i-bob i-d2"/></symbol>
+
+<symbol id="k-gear" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <g class="i-spin"><path d="M16 2.5 18.6 6l4.2-.8 1 4.2 3.8 2-1.6 4 1.6 4-3.8 2-1 4.2-4.2-.8L16 29.5 13.4 26l-4.2.8-1-4.2-3.8-2 1.6-4-1.6-4 3.8-2 1-4.2 4.2.8z"/></g>
+  <circle cx="16" cy="16" r="4.4" class="i-pulse"/></symbol>
+
+<symbol id="k-eye" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1.5 16S7 7 16 7s14.5 9 14.5 9-5.5 9-14.5 9S1.5 16 1.5 16Z" class="i-blink"/>
+  <circle cx="16" cy="16" r="4.6" class="i-pulse"/></symbol>
+
+<symbol id="k-money" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="7" width="27" height="18" rx="2.6"/><circle cx="16" cy="16" r="4.6" class="i-pulse"/>
+  <path d="M7 12v8M25 12v8" class="i-flow"/></symbol>
+
+<symbol id="k-check" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="16" cy="16" r="13"/><path d="m9.5 16.4 4.4 4.4 9-9.4" style="--dl:22" class="i-draw"/>
+  <circle cx="16" cy="16" r="13" class="i-ring" opacity=".35"/></symbol>
+
+<symbol id="k-door" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 29V4.6a1.6 1.6 0 0 1 1.9-1.6l13 2.4A1.6 1.6 0 0 1 22 7v18a1.6 1.6 0 0 1-1.1 1.6l-13 2.4A1.6 1.6 0 0 1 6 29Z"/>
+  <path d="M2.5 29h27"/><circle cx="18" cy="16.5" r="1.5" fill="currentColor" stroke="none" class="i-pulse"/></symbol>
+
+<symbol id="k-shelf" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 3.5v25M29 3.5v25M3 11h26M3 19.5h26M3 28h26"/>
+  <rect x="7" y="5.5" width="4" height="5.5" fill="currentColor" stroke="none" class="i-rise"/>
+  <rect x="14" y="6.8" width="4" height="4.2" fill="currentColor" stroke="none" class="i-rise i-d1"/>
+  <rect x="21" y="14.5" width="4" height="5" fill="currentColor" stroke="none" class="i-rise i-d2"/>
+  <rect x="7" y="15.8" width="4" height="3.7" fill="currentColor" stroke="none" class="i-rise i-d3"/></symbol>
+
+<symbol id="k-scan" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.5 9V5a2.5 2.5 0 0 1 2.5-2.5h4M22.5 2.5h4A2.5 2.5 0 0 1 29.5 5v4M29.5 23v4a2.5 2.5 0 0 1-2.5 2.5h-4M9.5 29.5h-4A2.5 2.5 0 0 1 2.5 27v-4"/>
+  <path d="M2.5 16h27" class="i-flow"/><path d="M9 11v3M13 10v5M17 11v3M21 10v5" opacity=".65"/></symbol>
+
+<symbol id="k-flag" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6.5 30V3"/><path d="M6.5 4.5h18l-3.6 6.6 3.6 6.6h-18" class="i-swing"/>
+  <circle cx="6.5" cy="3" r="2.4" class="i-ring" opacity=".5"/></symbol>
+</defs></svg>
+
+<main class="deck" id="deck">
+
+<!-- ═══════════ 01 · CAPA ═══════════ -->
+<section class="s deep on">
+  <div class="meta"><span class="l">Proposta comercial</span><span class="r">Agosto · 2026</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp">
+      <div class="stack" style="gap:clamp(16px,2.2vw,34px)">
+        <div class="fu" style="display:flex;align-items:center;gap:clamp(14px,1.8vw,30px)">
+          <img src="assets/75lab-wordmark-paper.png" alt="75 LAB" style="height:clamp(20px,2.2vw,36px)">
+          <span style="width:1px;height:clamp(24px,2.6vw,44px);background:currentColor;opacity:.3"></span>
+          <span style="font-family:var(--disp);font-weight:900;font-stretch:125%;font-size:clamp(24px,3vw,50px);letter-spacing:-.04em;color:var(--org)">COOP</span>
+        </div>
+        <h1 class="mega sm"><span class="ln"><i><span class="pre">Pacote de</span></i></span><span class="ln"><i><em>Aceleração</em></i></span><span class="ln"><i>de Trade</i></span></h1>
+        <p class="say fu">Uma agenda <b>trimestral</b> de oportunidades comerciais para transformar espaços, canais e calendário da COOP em <b>experiências vendáveis</b> para a indústria.</p>
+        <div class="ctas">
+          <button class="cta" data-go="3">Ver a proposta <span class="ar"><svg><use href="#ar"/></svg></span></button>
+          <button class="cta gh" data-go="15">Ir ao modelo comercial</button>
+        </div>
+      </div>
+      <div class="gal" style="gap:clamp(8px,1vw,16px)">
+        <div class="shot" style="aspect-ratio:16/9"><span class="cp">Loja COOP · frente de caixa</span><img src="assets/r-checkout.jpg" alt="Frente de caixa de uma loja COOP com sinalização da marca"></div>
+        <div class="shot" style="aspect-ratio:16/9"><span class="cp">Ativação de categoria em loja</span><img src="assets/r-ativacao.jpg" alt="Ilha de ativação de categoria dentro da loja"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv" aria-label="Anterior"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">01</b> / <span class="to">22</span></span><button class="nb nx" aria-label="Próximo"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 · 75 LAB ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Quem assina</span><span class="r">75 LAB · Aceleradora de Trade Marketing</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vw,26px)">
+      <span class="ic big" style="color:var(--org)"><svg><use href="#k-rocket"/></svg></span>
+      <span class="kicker">A aceleradora</span>
+    </div>
+    <h2 class="mega sm"><span class="ln"><i>Ideia boa é a</i></span><span class="ln"><i>que <em>acontece.</em></i></span></h2>
+    <div class="sp">
+      <p class="say">A 75 LAB é uma <b>aceleradora de trade marketing</b>. Nascemos dos dois lados do balcão — o <b>varejo</b> e a <b>indústria</b> — e por isso falamos as duas línguas na mesma mesa.</p>
+      <div class="rows">
+        <div class="row"><span class="k">Projetos aprovados</span><span class="v"><em><span data-n="95">0</span>%</em></span></div>
+        <div class="row"><span class="k">PDVs positivados</span><span class="v"><span data-n="15" data-f>0</span> mil+</span></div>
+        <div class="row"><span class="k">Custo de produção</span><span class="v">−<span data-n="25">0</span>%</span></div>
+        <div class="row"><span class="k">Anos de estrada no trade</span><span class="v">+<span data-n="15">0</span></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">02</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 · HUB 75 LAB ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">O que a 75 LAB pluga</span><span class="r">Hub de soluções de trade</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp-a">
+      <div class="stack">
+        <h2 class="mega xs"><span class="ln"><i>Do evento</i></span><span class="ln"><i>à <em>gôndola.</em></i></span></h2>
+        <p class="say sm fu">O cliente não compra uma entrega isolada. <b>Acessa uma rede inteira</b> — estratégia, criação, produção, logística e operação sob uma única governança.</p>
+        <div class="chips fu">
+          <span class="chip">Eventos</span><span class="chip">Stand</span><span class="chip">PDV</span>
+          <span class="chip">Promoção</span><span class="chip">Retail media</span><span class="chip">Promotoria</span>
+          <span class="chip">Incentivo</span><span class="chip on">Aceleração de Trade</span>
+        </div>
+        <div class="ctas"><button class="cta or" data-go="3">O que trouxemos para a COOP <span class="ar"><svg><use href="#ar"/></svg></span></button></div>
+      </div>
+      <div class="fig">
+        <svg viewBox="0 0 640 330" role="img" aria-label="Diagrama do hub de soluções da 75 LAB">
+          <g stroke="var(--org)" stroke-width="1.3" opacity=".55" fill="none">
+            <path class="i-flow" d="M320 165 530 165"/><path class="i-flow i-d1" d="M320 165 468 248"/>
+            <path class="i-flow i-d2" d="M320 165 320 283"/><path class="i-flow i-d3" d="M320 165 172 248"/>
+            <path class="i-flow i-d1" d="M320 165 110 165"/><path class="i-flow i-d2" d="M320 165 172 82"/>
+            <path class="i-flow i-d3" d="M320 165 320 47"/><path class="i-flow" d="M320 165 468 82"/>
+          </g>
+          <g class="i-spin" style="transform-origin:320px 165px">
+            <circle cx="320" cy="165" r="62" fill="none" stroke="var(--org)" stroke-width="1.2" stroke-dasharray="3 8" opacity=".7"/>
+          </g>
+          <circle cx="320" cy="165" r="48" fill="var(--org)"/>
+          <circle cx="320" cy="165" r="48" fill="none" stroke="var(--org)" stroke-width="1.4" class="bhalo"/>
+          <text x="320" y="163" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:15px;fill:#06152F;letter-spacing:-.02em">75 LAB</text>
+          <text x="320" y="177" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:7px;fill:#06152F;opacity:.7;letter-spacing:.16em">HUB</text>
+          <g class="hubn">
+            <g><rect x="472" y="152" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="530" y="169" text-anchor="middle" class="axl" style="opacity:.85">Retail media</text></g>
+            <g><rect x="410" y="235" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="468" y="252" text-anchor="middle" class="axl" style="opacity:.85">Promotoria</text></g>
+            <g><rect x="262" y="270" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="320" y="287" text-anchor="middle" class="axl" style="opacity:.85">Material de PDV</text></g>
+            <g><rect x="114" y="235" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="172" y="252" text-anchor="middle" class="axl" style="opacity:.85">Promoção</text></g>
+            <g><rect x="52" y="152" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="110" y="169" text-anchor="middle" class="axl" style="opacity:.85">Produção</text></g>
+            <g><rect x="114" y="69" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="172" y="86" text-anchor="middle" class="axl" style="opacity:.85">Logística</text></g>
+            <g><rect x="262" y="34" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="320" y="51" text-anchor="middle" class="axl" style="opacity:.85">Eventos e stand</text></g>
+            <g><rect x="410" y="69" width="116" height="26" rx="13" fill="rgba(255,248,239,.09)" stroke="currentColor" stroke-opacity=".3"/><text x="468" y="86" text-anchor="middle" class="axl" style="opacity:.85">Incentivo</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">03</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 04 · A VIRADA ═══════════ -->
+<section class="s org">
+  <div class="meta"><span class="l">A virada comercial</span><span class="r">Tese da proposta</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega sm"><span class="ln"><i>Não vendemos</i></span><span class="ln"><i>espaços.</i></span><span class="ln"><i>Entregamos <em>acesso</em></i></span><span class="ln"><i><em>ao consumidor.</em></i></span></h2>
+    <p class="say w fu">Sair da venda de espaços isolados e passar a vender <b>audiência qualificada dentro da loja</b>: conceito, formatos de participação, contrapartidas, abrangência, indicadores e caminho de execução.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">04</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 05 · A OPORTUNIDADE ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">A oportunidade para a COOP</span><span class="r">O que muda na prática</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Uma <em>esteira contínua</em></i></span><span class="ln"><i>de projetos para negociar.</i></span></h2>
+    <div class="g g3">
+      <div class="cd fu"><span class="ic"><svg><use href="#k-cal"/></svg></span><span class="n">01</span><span class="t">Agenda</span><span class="d">Oportunidades organizadas por trimestre e sazonalidade, prontas para comercialização.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-layers"/></svg></span><span class="n">02</span><span class="t">Canais</span><span class="d">Loja, mídia, ativação, digital e operação atuando como um único pacote vendável.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-hand"/></svg></span><span class="n">03</span><span class="t">Parceiro</span><span class="d">Estratégia, criação, produção e comprovação conectadas em um só interlocutor.</span></div>
+    </div>
+    <p class="say w fu">A COOP passa a ter um <b>portfólio comercial renovado</b> para apresentar à indústria — com entregáveis claros, abrangência definida e caminho real de execução.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">05</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 06 · O MODELO ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">O modelo proposto</span><span class="r">Ciclo trimestral · simples, recorrente e escalável</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp-a">
+      <div class="fig">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Diagrama do ciclo trimestral em quatro etapas">
+          <g transform="rotate(-90 150 150)" fill="none" stroke-width="34" stroke-linecap="butt">
+            <circle class="cyc c0" cx="150" cy="150" r="104" stroke="var(--org)" stroke-dasharray="150 504" stroke-dashoffset="0"/>
+            <circle class="cyc c1" cx="150" cy="150" r="104" stroke="var(--org)" stroke-dasharray="150 504" stroke-dashoffset="-163.4"/>
+            <circle class="cyc c2" cx="150" cy="150" r="104" stroke="var(--org)" stroke-dasharray="150 504" stroke-dashoffset="-326.7"/>
+            <circle class="cyc c3" cx="150" cy="150" r="104" stroke="var(--org)" stroke-dasharray="150 504" stroke-dashoffset="-490.1"/>
+          </g>
+          <g class="i-spin" style="transform-origin:150px 150px">
+            <circle cx="150" cy="46" r="7" fill="var(--lime)" stroke="var(--ink)" stroke-width="1.4"/>
+          </g>
+          <circle cx="150" cy="150" r="70" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1" stroke-dasharray="3 7"/>
+          <text x="150" y="143" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:26px;fill:currentColor;letter-spacing:-.04em">90</text>
+          <text x="150" y="160" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:800;font-size:12px;fill:currentColor;letter-spacing:-.02em">DIAS</text>
+          <text x="150" y="174" text-anchor="middle" class="axl">POR CICLO</text>
+          <g style="font-family:Archivo,sans-serif;font-weight:900;font-size:19px;fill:#06152F">
+            <text x="224" y="83" text-anchor="middle">1</text><text x="224" y="230" text-anchor="middle">2</text>
+            <text x="76" y="230" text-anchor="middle">3</text><text x="76" y="83" text-anchor="middle">4</text>
+          </g>
+        </svg>
+      </div>
+      <div class="steps g2" data-seq>
+        <div class="step"><span class="ic sm"><svg><use href="#k-target"/></svg></span><span class="n">ETAPA 01</span><span class="t">Priorização</span><span class="bl"><i></i></span><span class="d">Calendário, categorias e oportunidades do trimestre.</span></div>
+        <div class="step"><span class="ic sm"><svg><use href="#k-tag"/></svg></span><span class="n">ETAPA 02</span><span class="t">Produto comercial</span><span class="bl"><i></i></span><span class="d">Conceito, cotas, contrapartidas, enxoval e Media Kit.</span></div>
+        <div class="step"><span class="ic sm"><svg><use href="#k-hand"/></svg></span><span class="n">ETAPA 03</span><span class="t">Venda à indústria</span><span class="bl"><i></i></span><span class="d">A COOP negocia com fornecedores e marcas participantes.</span></div>
+        <div class="step"><span class="ic sm"><svg><use href="#k-gear"/></svg></span><span class="n">ETAPA 04</span><span class="t">Execução 75 LAB</span><span class="bl"><i></i></span><span class="d">Produção, logística, operação, evidências e relatório.</span></div>
+      </div>
+    </div>
+    <p class="say w fu">A COOP estrutura melhor sua oferta à indústria. A 75 LAB garante <b>continuidade estratégica</b> e <b>execução</b> dos projetos aprovados.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">06</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 07 · CADA TRIMESTRE ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Como funciona cada trimestre</span><span class="r">O ritmo do pacote</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Todo trimestre,</i></span><span class="ln"><i>a COOP ganha <em>oferta nova.</em></i></span></h2>
+    <div class="g g3">
+      <div class="bn fu"><span class="num mid"><span data-n="1">0</span></span><span class="lb">Ação prioritária conectada ao calendário oficial da COOP</span></div>
+      <div class="bn fu"><span class="num mid"><i class="pfx">até</i><span data-n="2">0</span></span><span class="lb">Sugestões complementares propostas pela 75 LAB</span></div>
+      <div class="bn fu"><span class="num mid"><span data-n="1">0</span></span><span class="lb">Media Kit atualizado com tudo que está disponível para venda</span></div>
+    </div>
+    <div class="rows thin">
+      <div class="row"><span class="k">O que define a prioridade</span><span class="v"><em>Calendário + sazonalidade + categorias + potencial da indústria</em></span></div>
+      <div class="row"><span class="k">O que é desenvolvido</span><span class="v">Conceitos, cotas, entregáveis e apresentação comercial</span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">07</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 · MATRIZ ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Matriz de priorização</span><span class="r">O que entra primeiro no trimestre</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp">
+      <div class="fig">
+        <svg viewBox="0 0 580 350" role="img" aria-label="Matriz de priorização: potencial comercial versus complexidade operacional">
+          <line class="ax" x1="66" y1="20" x2="66" y2="300"/>
+          <line class="ax" x1="66" y1="300" x2="560" y2="300"/>
+          <line class="axd" x1="313" y1="20" x2="313" y2="300"/>
+          <line class="axd" x1="66" y1="160" x2="560" y2="160"/>
+          <text x="66" y="325" class="axl">&#8592; Menor complexidade operacional</text>
+          <text x="560" y="325" class="axl" text-anchor="end">Maior complexidade &#8594;</text>
+          <text x="52" y="160" class="axl" transform="rotate(-90 52 160)" text-anchor="middle">&#8594; Maior potencial comercial</text>
+          <g class="bub">
+            <circle cx="168" cy="82" r="40" fill="var(--org)" fill-opacity=".25" class="bhalo"/>
+            <circle class="bc" cx="168" cy="82" r="40" fill="var(--org)"/>
+            <text x="168" y="80" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:13px;fill:#06152F">AÇÃO</text>
+            <text x="168" y="94" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:13px;fill:#06152F">1</text>
+            <text x="168" y="140" text-anchor="middle" class="axt">Prioritária</text>
+          </g>
+          <g class="bub">
+            <circle cx="320" cy="118" r="29" fill="var(--org-l)" fill-opacity=".3" class="bhalo i-d2"/>
+            <circle class="bc" cx="320" cy="118" r="29" fill="var(--org-l)"/>
+            <text x="320" y="122" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:12px;fill:#06152F">C1</text>
+            <text x="320" y="166" text-anchor="middle" class="axt">Complementar</text>
+          </g>
+          <g class="bub">
+            <circle cx="232" cy="215" r="24" fill="var(--navy)" fill-opacity=".55"/>
+            <text x="232" y="219" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:11px;fill:#FFF8EF">C2</text>
+            <text x="232" y="256" text-anchor="middle" class="axt">Complementar</text>
+          </g>
+          <g class="bub">
+            <circle cx="462" cy="238" r="19" fill="currentColor" fill-opacity=".2"/>
+            <text x="462" y="242" text-anchor="middle" class="axl" style="opacity:.9">IF</text>
+            <text x="462" y="275" text-anchor="middle" class="axt" opacity=".6">Ideia futura</text>
+          </g>
+        </svg>
+      </div>
+      <div class="stack">
+        <h2 class="mega xs"><span class="ln"><i>Priorizar vira</i></span><span class="ln"><i><em>rotina.</em></i></span></h2>
+        <div class="rows thin">
+          <div class="row"><span class="k">Critério 01</span><span class="v">Potencial de receita</span></div>
+          <div class="row"><span class="k">Critério 02</span><span class="v">Aderência ao calendário</span></div>
+          <div class="row"><span class="k">Critério 03</span><span class="v">Interesse das marcas</span></div>
+          <div class="row"><span class="k">Critério 04</span><span class="v">Abrangência por lojas</span></div>
+          <div class="row"><span class="k">Critério 05</span><span class="v">Viabilidade de execução</span></div>
+        </div>
+        <p class="say sm fu">Recomendação 75 LAB: transformar a priorização em <b>tomada de decisão no início de cada ciclo</b>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">08</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 · ENTREGÁVEIS ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Entregáveis do pacote</span><span class="r">Inteligência + criação + venda</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Não é peça solta.</i></span><span class="ln"><i>É <em>oferta vendável.</em></i></span></h2>
+    <div class="g g6 keep">
+      <div class="cd fu"><span class="ic"><svg><use href="#k-target"/></svg></span><span class="n">01</span><span class="t">Estratégia</span><span class="d">Curadoria, calendário, oportunidades e categorias aderentes.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-bulb"/></svg></span><span class="n">02</span><span class="t">Conceito</span><span class="d">Nome, narrativa, identidade preliminar e key visual.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-tag"/></svg></span><span class="n">03</span><span class="t">Cotas</span><span class="d">Arquitetura de participação, contrapartidas e benefícios.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-screen"/></svg></span><span class="n">04</span><span class="t">PDV + Digital</span><span class="d">Enxoval de loja, tabloide, CRM e canais digitais.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-gear"/></svg></span><span class="n">05</span><span class="t">Operação</span><span class="d">Plano preliminar, indicadores, registros e evidências.</span></div>
+      <div class="cd hl fu"><span class="ic"><svg><use href="#k-doc"/></svg></span><span class="n">06</span><span class="t">Media Kit</span><span class="d">Apresentação comercial trimestral para levar à indústria.</span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">09</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 10 · FOTO · PLANEJAMENTO ═══════════ -->
+<section class="s pic">
+  <div class="img"><img src="assets/r-planejamento.jpg" alt="Mesa de planejamento de trade marketing com layouts, paletas e dashboards"></div>
+  <div class="scrim"></div>
+  <div class="cap">
+    <span class="kicker">Capítulo 02</span>
+    <h2 class="mega sm"><span class="ln"><i>Da inteligência</i></span><span class="ln"><i>à <em>venda.</em></i></span></h2>
+    <p class="say w fu">Como cada oportunidade do calendário vira uma proposta que a indústria consegue aprovar.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">10</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 11 · PRODUTO COMERCIAL ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Cada campanha vira um produto comercial</span><span class="r">Para facilitar venda, negociação e aprovação</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Deixa de ser ideia.</i></span><span class="ln"><i>Vira <em>proposta pronta.</em></i></span></h2>
+    <div class="flow" data-flow>
+      <div class="fnode"><span class="fn">01</span><span class="ic sm"><svg><use href="#k-flag"/></svg></span><span class="ft">Oferta</span><span class="fd">Nome, conceito, objetivo, período, categorias e marcas aderentes.</span></div>
+      <div class="fnode"><span class="fn">02</span><span class="ic sm"><svg><use href="#k-cart"/></svg></span><span class="ft">Experiência</span><span class="fd">Mecânica promocional, jornada do consumidor, materiais físicos e digitais.</span></div>
+      <div class="fnode"><span class="fn">03</span><span class="ic sm"><svg><use href="#k-money"/></svg></span><span class="ft">Negócio</span><span class="fd">Cotas, contrapartidas, responsabilidades, abrangência e investimento.</span></div>
+      <div class="fnode"><span class="fn">04</span><span class="ic sm"><svg><use href="#k-check"/></svg></span><span class="ft">Comprovação</span><span class="fd">Cronograma, indicadores, registros, evidências e relatório final.</span></div>
+    </div>
+    <div class="ctas"><button class="cta or" data-go="13">Onde isso acontece na loja <span class="ar"><svg><use href="#ar"/></svg></span></button></div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">11</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 12 · JORNADA DO SHOPPER ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Presença ao longo da jornada do shopper</span><span class="r">Momentos de maior influência</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp-a">
+      <div class="stack">
+        <h2 class="mega xs"><span class="ln"><i>Da porta</i></span><span class="ln"><i>ao <em>caixa.</em></i></span></h2>
+        <p class="say sm fu">A seleção final considera realidade operacional, espaços disponíveis e restrições de cada unidade.</p>
+      </div>
+      <div class="fig">
+        <svg viewBox="0 0 560 260" role="img" aria-label="Curva de influência sobre a decisão de compra ao longo da jornada">
+          <defs><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F47A20" stop-opacity=".55"/><stop offset="100%" stop-color="#F47A20" stop-opacity="0"/>
+          </linearGradient></defs>
+          <line class="axd" x1="40" y1="40" x2="540" y2="40"/>
+          <line class="axd" x1="40" y1="110" x2="540" y2="110"/>
+          <line class="axd" x1="40" y1="180" x2="540" y2="180"/>
+          <line class="ax" x1="40" y1="216" x2="540" y2="216"/>
+          <path d="M70 190 C 130 178, 158 150, 195 138 S 268 92, 320 58 S 420 92, 490 118 L490 216 L70 216 Z" fill="url(#gv)"/>
+          <path class="dr" style="--dl:640" d="M70 190 C 130 178, 158 150, 195 138 S 268 92, 320 58 S 420 92, 490 118"
+            fill="none" stroke="var(--org)" stroke-width="3.2" stroke-linecap="round"/>
+          <g>
+            <circle cx="70" cy="190" r="16" fill="var(--org)" fill-opacity=".25" class="bhalo"/><circle cx="70" cy="190" r="7" fill="var(--org)"/>
+            <circle cx="195" cy="138" r="16" fill="var(--org)" fill-opacity=".25" class="bhalo i-d1"/><circle cx="195" cy="138" r="7" fill="var(--org)"/>
+            <circle cx="320" cy="58" r="20" fill="var(--org)" fill-opacity=".3" class="bhalo i-d2"/><circle cx="320" cy="58" r="9" fill="var(--org)"/>
+            <circle cx="490" cy="118" r="16" fill="var(--org)" fill-opacity=".25" class="bhalo i-d3"/><circle cx="490" cy="118" r="7" fill="var(--org)"/>
+          </g>
+          <text x="70" y="236" class="axl" text-anchor="middle">Acesso</text>
+          <text x="195" y="236" class="axl" text-anchor="middle">Circulação</text>
+          <text x="320" y="236" class="axl" text-anchor="middle" style="opacity:.95">Decisão</text>
+          <text x="490" y="236" class="axl" text-anchor="middle">Conversão</text>
+          <text x="320" y="36" class="axt" text-anchor="middle" fill="var(--org)">PICO DE INFLUÊNCIA</text>
+        </svg>
+      </div>
+    </div>
+    <div class="steps g4" data-seq>
+      <div class="step"><span class="ic sm"><svg><use href="#k-door"/></svg></span><span class="n">01</span><span class="t">Acesso</span><span class="bl"><i></i></span><span class="d">Estacionamento, entrada, carrinhos e fluxo inicial.</span></div>
+      <div class="step"><span class="ic sm"><svg><use href="#k-store"/></svg></span><span class="n">02</span><span class="t">Circulação</span><span class="bl"><i></i></span><span class="d">Corredores, categorias, ilhas e pontos extras.</span></div>
+      <div class="step"><span class="ic sm"><svg><use href="#k-shelf"/></svg></span><span class="n">03</span><span class="t">Decisão</span><span class="bl"><i></i></span><span class="d">Gôndola, displays, degustação e demonstração.</span></div>
+      <div class="step"><span class="ic sm"><svg><use href="#k-scan"/></svg></span><span class="n">04</span><span class="t">Conversão</span><span class="bl"><i></i></span><span class="d">Checkout, saída, CRM e reforço digital.</span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">12</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 13 · FOTO · ATIVAÇÃO ═══════════ -->
+<section class="s pic">
+  <div class="img"><img src="assets/r-ativacao.jpg" alt="Ativação de categoria com degustação e ilha promocional dentro da loja"></div>
+  <div class="scrim"></div>
+  <div class="cap">
+    <span class="kicker">Capítulo 03</span>
+    <h2 class="mega sm"><span class="ln"><i>O espaço vira</i></span><span class="ln"><i><em>experiência.</em></i></span></h2>
+    <p class="say w fu">Cada cota vendida tem forma, lugar e prova. É isso que a indústria compra.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">13</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 14 · MEDIA KIT ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Media Kit trimestral</span><span class="r">A ferramenta comercial da COOP</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp">
+      <div class="stack">
+        <h2 class="mega xs"><span class="ln"><i>A COOP em</i></span><span class="ln"><i><em>movimento comercial</em></i></span><span class="ln"><i>contínuo.</i></span></h2>
+        <div class="rows thin">
+          <div class="row"><span class="k">Conteúdo 01</span><span class="v">Conceitos e calendário das ações</span></div>
+          <div class="row"><span class="k">Conteúdo 02</span><span class="v">Formatos de mídia e ativação</span></div>
+          <div class="row"><span class="k">Conteúdo 03</span><span class="v">Lojas, praças ou regiões</span></div>
+          <div class="row"><span class="k">Conteúdo 04</span><span class="v"><em>Cotas, contrapartidas e investimento</em></span></div>
+          <div class="row"><span class="k">Conteúdo 05</span><span class="v">Indicadores, evidências e referências</span></div>
+        </div>
+      </div>
+      <div class="fig">
+        <svg viewBox="0 0 420 330" role="img" aria-label="Mockup do Media Kit trimestral">
+          <g transform="rotate(-7 210 170)" opacity=".35"><rect x="76" y="42" width="200" height="262" rx="8" fill="currentColor" opacity=".18"/></g>
+          <g transform="rotate(-3.5 210 170)" opacity=".6"><rect x="94" y="36" width="200" height="262" rx="8" fill="currentColor" opacity=".22"/></g>
+          <g class="i-bob">
+            <rect x="112" y="30" width="204" height="266" rx="9" fill="var(--navy)"/>
+            <rect x="112" y="30" width="204" height="76" rx="9" fill="var(--org)"/>
+            <rect x="112" y="92" width="204" height="14" fill="var(--org)"/>
+            <text x="132" y="64" style="font-family:Archivo,sans-serif;font-weight:900;font-size:17px;fill:#06152F;letter-spacing:-.03em">MEDIA KIT</text>
+            <text x="132" y="82" style="font-family:'Space Mono',monospace;font-size:8px;fill:#06152F;opacity:.72;letter-spacing:.18em">COOP · 1º TRIMESTRE</text>
+            <rect x="132" y="126" width="120" height="7" rx="3.5" fill="#FFF8EF" opacity=".75" class="i-pulse"/>
+            <rect x="132" y="141" width="164" height="7" rx="3.5" fill="#FFF8EF" opacity=".3"/>
+            <rect x="132" y="156" width="96" height="7" rx="3.5" fill="#FFF8EF" opacity=".3"/>
+            <g>
+              <rect x="132" y="196" width="26" height="34" rx="3" fill="var(--org)" class="i-rise"/>
+              <rect x="166" y="182" width="26" height="48" rx="3" fill="var(--org)" class="i-rise i-d1"/>
+              <rect x="200" y="204" width="26" height="26" rx="3" fill="#FFF8EF" opacity=".45" class="i-rise i-d2"/>
+              <rect x="234" y="172" width="26" height="58" rx="3" fill="var(--lime)" class="i-rise i-d3"/>
+              <line x1="132" y1="232" x2="296" y2="232" stroke="#FFF8EF" stroke-opacity=".3" stroke-width="1.4"/>
+            </g>
+            <rect x="132" y="252" width="76" height="22" rx="11" fill="var(--lime)"/>
+            <text x="170" y="267" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:800;font-size:8.4px;fill:#0A0A08;letter-spacing:.02em">COTAS</text>
+            <rect x="216" y="252" width="80" height="22" rx="11" fill="none" stroke="#FFF8EF" stroke-opacity=".4"/>
+            <text x="256" y="267" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:7.6px;fill:#FFF8EF;opacity:.7;letter-spacing:.14em">LOJAS</text>
+          </g>
+          <g class="i-spin" style="transform-origin:344px 84px">
+            <circle cx="344" cy="84" r="26" fill="none" stroke="var(--org)" stroke-width="1.2" stroke-dasharray="3 7"/>
+          </g>
+          <text x="344" y="80" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:13px;fill:var(--org)">4×</text>
+          <text x="344" y="93" text-anchor="middle" class="axl" style="opacity:.7">ANO</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">14</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 15 · EXECUÇÃO ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Quando a campanha vai para a loja</span><span class="r">Execução integrada 75 LAB</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Vendeu?</i></span><span class="ln"><i>A gente <em>coloca de pé.</em></i></span></h2>
+    <div class="g g4 keep">
+      <div class="cd fu"><span class="ic"><svg><use href="#k-box"/></svg></span><span class="n">01</span><span class="t">Produção</span><span class="d">Peças, materiais, finalização de artes e especificações técnicas.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-truck"/></svg></span><span class="n">02</span><span class="t">Logística</span><span class="d">Frete, distribuição e instalação loja a loja.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-team"/></svg></span><span class="n">03</span><span class="t">Operação</span><span class="d">Promotoria, treinamento, supervisão e controle em campo.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-cam"/></svg></span><span class="n">04</span><span class="t">Evidência</span><span class="d">Book fotográfico, indicadores e relatório final da ação.</span></div>
+    </div>
+    <p class="say w fu">Cada orçamento considera <b>peças, quantidades, lojas, abrangência geográfica</b> e período de execução.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">15</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 16 · CONTRATAÇÃO ═══════════ -->
+<section class="s org">
+  <div class="meta"><span class="l">Modelo de contratação</span><span class="r">Pacote trimestral + compensação por produção</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Três cenários.</i></span><span class="ln"><i>Uma <em>regra justa.</em></i></span></h2>
+    <div class="sp">
+      <div class="g g3" style="gap:clamp(10px,1.2vw,20px)">
+        <div class="cd fu"><span class="n">CENÁRIO 01</span><span class="t">Sem venda</span><span class="d">Faturado integralmente pelo desenvolvimento realizado.</span><span class="tag" style="opacity:1"><em>Protege o trabalho intelectual</em></span></div>
+        <div class="cd fu"><span class="n">CENÁRIO 02</span><span class="t">Venda parcial</span><span class="d">Compensação proporcional ao volume produzido.</span><span class="tag" style="opacity:1"><em>Mantém justiça comercial</em></span></div>
+        <div class="cd fu"><span class="n">CENÁRIO 03</span><span class="t">Gatilho atingido</span><span class="d">Compensado conforme o volume mínimo acordado.</span><span class="tag" style="opacity:1"><em>Escala produção e execução</em></span></div>
+      </div>
+      <div class="fig">
+        <svg viewBox="0 0 340 250" role="img" aria-label="Nível de compensação do pacote em cada cenário">
+          <line class="ax" x1="26" y1="200" x2="326" y2="200"/>
+          <line class="axd" x1="26" y1="60" x2="326" y2="60"/>
+          <text x="26" y="52" class="axl" style="opacity:.85;fill:#06152F">Gatilho mínimo</text>
+          <g fill="#06152F">
+            <rect class="gb" x="48" y="182" width="58" height="18" rx="3" opacity=".3" style="animation-delay:.35s"/>
+            <rect class="gb" x="140" y="120" width="58" height="80" rx="3" opacity=".62" style="animation-delay:.5s"/>
+            <rect class="gb" x="232" y="52" width="58" height="148" rx="3" style="animation-delay:.65s"/>
+          </g>
+          <g style="font-family:Archivo,sans-serif;font-weight:900;font-size:11px;fill:#06152F">
+            <text x="77" y="174" text-anchor="middle">ZERO</text>
+            <text x="169" y="112" text-anchor="middle">PROPORCIONAL</text>
+            <text x="261" y="44" text-anchor="middle">TOTAL</text>
+          </g>
+          <g class="axl" style="opacity:.75;fill:#06152F">
+            <text x="77" y="218" text-anchor="middle">Sem venda</text>
+            <text x="169" y="218" text-anchor="middle">Venda parcial</text>
+            <text x="261" y="218" text-anchor="middle">Gatilho</text>
+          </g>
+          <text x="176" y="242" text-anchor="middle" class="axl" style="opacity:.6;fill:#06152F">Compensação do pacote trimestral</text>
+        </svg>
+      </div>
+    </div>
+    <p class="say w sm fu">Condição central: definir o <b>volume mínimo de produção</b> que compensa o pacote.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">16</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 17 · INVESTIMENTO ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Como formar o investimento</span><span class="r">Desenvolvimento separado da execução física</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Quatro caixas.</i></span><span class="ln"><i><em>Zero zona cinzenta.</em></i></span></h2>
+    <div class="g g4 keep">
+      <div class="cd lm fu"><span class="ic"><svg><use href="#k-bulb"/></svg></span><span class="n">FIXO · TRIMESTRAL</span><span class="t">Pacote trimestral</span><span class="d">Atendimento, planejamento, criação, estruturação comercial, apresentações e Media Kit.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-box"/></svg></span><span class="n">VARIÁVEL · POR AÇÃO</span><span class="t">Produção</span><span class="d">Impressão, materiais, estruturas, acabamentos, protótipos e embalagens.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-truck"/></svg></span><span class="n">VARIÁVEL · POR AÇÃO</span><span class="t">Instalação</span><span class="d">Frete, distribuição loja a loja, montagem, manutenção, trocas e retirada.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-chart"/></svg></span><span class="n">VARIÁVEL · POR AÇÃO</span><span class="t">Operação</span><span class="d">Promotores, treinamento, uniformes, supervisão, registros e relatório.</span></div>
+    </div>
+    <div class="chips">
+      <span class="chip on">Valor trimestral</span><span class="chip">Nº de oportunidades</span><span class="chip">Horas por equipe</span>
+      <span class="chip">Demandas excedentes</span><span class="chip on">Gatilho mínimo</span><span class="chip">Impostos</span><span class="chip">Pagamento</span>
+    </div>
+    <p class="disc">Campos-chave a fechar na negociação comercial.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">17</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 18 · RESPONSABILIDADES ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Responsabilidades bem definidas</span><span class="r">Parceria sem zonas cinzentas</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Cada um no</i></span><span class="ln"><i>seu <em>quadrado.</em></i></span></h2>
+    <div class="duo">
+      <div>
+        <div class="hd"><span class="ic sm" style="color:var(--org)"><svg><use href="#k-store"/></svg></span><b>COOP</b></div>
+        <div class="li"><span class="bt"></span><span>Fornecer calendário e prioridades do período</span></div>
+        <div class="li"><span class="bt"></span><span>Aprovar conceitos, cotas e cronogramas</span></div>
+        <div class="li"><span class="bt"></span><span>Comercializar as cotas com a indústria</span></div>
+        <div class="li"><span class="bt"></span><span>Selecionar lojas e autorizar espaços</span></div>
+        <div class="li"><span class="bt"></span><span>Validar dados, CRM e canais aplicáveis</span></div>
+      </div>
+      <div>
+        <div class="hd"><span class="ic sm" style="color:var(--org)"><svg><use href="#k-rocket"/></svg></span><b>75 LAB</b></div>
+        <div class="li lm"><span class="bt"></span><span>Planejar oportunidades e arquitetura comercial</span></div>
+        <div class="li lm"><span class="bt"></span><span>Criar apresentações, mockups e enxovais</span></div>
+        <div class="li lm"><span class="bt"></span><span>Avaliar viabilidade e cenários de investimento</span></div>
+        <div class="li lm"><span class="bt"></span><span>Produzir, instalar e operar as ações aprovadas</span></div>
+        <div class="li lm"><span class="bt"></span><span>Consolidar evidências, indicadores e relatório</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">18</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 19 · 90 DIAS ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Primeiro ciclo · plano de 90 dias</span><span class="r">Da estratégia à comercialização</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Doze semanas</i></span><span class="ln"><i>para <em>sair vendendo.</em></i></span></h2>
+    <div class="gantt">
+      <div class="gr"><span class="gk">Sem. 1–2</span><div class="gt"><i class="a" style="left:0;width:17%">Imersão</i></div></div>
+      <div class="gr"><span class="gk">Sem. 3–5</span><div class="gt"><i class="b" style="left:17%;width:25%">Desenvolvimento das ações</i></div></div>
+      <div class="gr"><span class="gk">Sem. 6–8</span><div class="gt"><i class="d" style="left:42%;width:25%">Cotas, enxoval e cenários</i></div></div>
+      <div class="gr"><span class="gk">Sem. 9–12</span><div class="gt"><i class="c" style="left:67%;width:33%">Media Kit + agenda com indústrias</i></div></div>
+    </div>
+    <div class="rows thin">
+      <div class="row"><span class="k">Semanas 1–2</span><span class="v">Calendário, prioridades, categorias e critérios</span></div>
+      <div class="row"><span class="k">Semanas 3–5</span><span class="v">Ação prioritária + sugestões complementares</span></div>
+      <div class="row"><span class="k">Semanas 6–8</span><span class="v">Arquitetura de cotas, contrapartidas e enxoval</span></div>
+      <div class="row"><span class="k">Semanas 9–12</span><span class="v"><em>Media Kit final e apoio à agenda comercial</em></span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">19</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 20 · O RESULTADO ═══════════ -->
+<section class="s org">
+  <div class="meta"><span class="l">Ao final do primeiro ciclo</span><span class="r">O que a COOP tem em mãos</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp">
+      <div class="bn">
+        <span class="num" style="display:flex;align-items:baseline;gap:.02em"><span data-n="90">0</span><u>dias</u></span>
+        <span class="lb" style="opacity:.75;max-width:26ch">Da primeira imersão à primeira reunião comercial com a indústria.</span>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="k">COOP sai com</span><span class="v"><em>Materiais prontos para venda</em></span></div>
+        <div class="row"><span class="k">75 LAB sai com</span><span class="v">Capacidade de orçar, produzir e executar</span></div>
+        <div class="row"><span class="k">E o ciclo</span><span class="v">Recomeça no trimestre seguinte</span></div>
+      </div>
+    </div>
+    <div class="ctas"><button class="cta" data-go="20">Próximos passos <span class="ar"><svg><use href="#ar"/></svg></span></button></div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">20</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 21 · PRÓXIMOS PASSOS ═══════════ -->
+<section class="s deep">
+  <div class="meta"><span class="l">Próximos passos</span><span class="r">Quatro decisões para começar</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Quatro decisões</i></span><span class="ln"><i>e a gente <em>começa.</em></i></span></h2>
+    <div class="g g4 keep">
+      <div class="cd fu"><span class="ic"><svg><use href="#k-cal"/></svg></span><span class="n">01</span><span class="t">Volume</span><span class="d">Validar a quantidade de oportunidades por trimestre.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-money"/></svg></span><span class="n">02</span><span class="t">Investimento</span><span class="d">Definir o valor do pacote e o gatilho mínimo de produção.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-target"/></svg></span><span class="n">03</span><span class="t">Prioridades</span><span class="d">Confirmar calendário prioritário e categorias iniciais.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-check"/></svg></span><span class="n">04</span><span class="t">Governança</span><span class="d">Fechar cronograma, responsáveis e fluxo de aprovação.</span></div>
+    </div>
+    <div class="ctas">
+      <button class="cta" data-go="0">Rever a proposta <span class="ar"><svg><use href="#ar"/></svg></span></button>
+      <button class="cta gh mo2">Abrir o índice</button>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">21</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 22 · FECHO ═══════════ -->
+<section class="s pic">
+  <div class="img"><img src="assets/r-checkout.jpg" alt="Frente de caixa de uma loja COOP"></div>
+  <div class="scrim"></div>
+  <div class="cap">
+    <span class="kicker lm">COOP × 75 LAB</span>
+    <h2 class="mega xs"><span class="ln"><i>Vamos transformar</i></span><span class="ln"><i>o calendário da COOP</i></span><span class="ln"><i>em <em>novas conversas.</em></i></span></h2>
+    <div class="ctas"><button class="cta" data-go="0">Voltar ao início <span class="ar"><svg><use href="#ar"/></svg></span></button></div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">22</b> / <span class="to">22</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ ÍNDICE ═══════════ -->
+<div class="menu" id="menu">
+  <div class="mh"><span class="t">Índice</span><button id="mx">Fechar · ESC</button></div>
+  <ul class="ml" id="mlist"></ul>
+</div>
+
+<script>
+(function(){
+  var T=["Capa",
+    "75 LAB · a aceleradora",
+    "O que a 75 LAB pluga",
+    "A virada comercial",
+    "A oportunidade para a COOP",
+    "O modelo · ciclo trimestral",
+    "Cada trimestre",
+    "Matriz de priorização",
+    "Entregáveis do pacote",
+    "Da inteligência à venda",
+    "Campanha vira produto comercial",
+    "Jornada do shopper",
+    "O espaço vira experiência",
+    "Media Kit trimestral",
+    "Execução em loja",
+    "Modelo de contratação",
+    "Como formar o investimento",
+    "Responsabilidades",
+    "Plano de 90 dias",
+    "O resultado do 1º ciclo",
+    "Próximos passos",
+    "COOP × 75 LAB"];
+  var HD=[0,1,3,9,12,15,20,21];
+  var sl=[].slice.call(document.querySelectorAll('.s')), i=0, n=sl.length;
+  var menu=document.getElementById('menu'), ml=document.getElementById('mlist'), pro=document.getElementById('pro');
+
+  T.forEach(function(t,k){
+    var li=document.createElement('li');
+    if(HD.indexOf(k)>-1) li.className='hd';
+    li.innerHTML='<span class="nn">'+String(k+1).padStart(2,'0')+'</span><span class="tt"></span>';
+    li.querySelector('.tt').textContent=t;
+    li.onclick=function(){go(k);menu.classList.remove('open')};
+    ml.appendChild(li);
+  });
+
+  function nums(s){
+    [].forEach.call(s.querySelectorAll('[data-n]'),function(el){
+      var tg=parseFloat(el.getAttribute('data-n')),t0=null,d=1150;
+      var fin=el.hasAttribute('data-f')?tg.toLocaleString('pt-BR'):String(tg);
+      if(document.hidden){ el.textContent=fin; return; }
+      el.textContent='0';
+      function st(ts){ if(!t0)t0=ts;
+        var p=Math.min((ts-t0)/d,1), e=1-Math.pow(1-p,4);
+        var v=Math.round(tg*e);
+        el.textContent=el.hasAttribute('data-f')?v.toLocaleString('pt-BR'):v;
+        if(p<1)requestAnimationFrame(st); }
+      requestAnimationFrame(st);
+      setTimeout(function(){ el.textContent=fin },d+200);
+    });
+  }
+  function replay(s){
+    s.querySelectorAll('.bar,.ln>i,.fu,.rows>*,.cta,.shot,.dr,.gb,.gt>i,.bub,.ring-fg').forEach(function(e){
+      var a=e.style.animation; e.style.animation='none'; void e.offsetWidth; e.style.animation=a||'';
+    });
+  }
+  function go(k){
+    if(k<0||k>=n||k===i)return;
+    sl[i].classList.remove('on'); i=k;
+    sl[i].classList.add('on'); sl[i].scrollTop=0;
+    replay(sl[i]); nums(sl[i]); runSeq(sl[i]);
+    document.querySelectorAll('.cu').forEach(function(e){e.textContent=String(i+1).padStart(2,'0')});
+    pro.style.width=(i/(n-1)*100)+'%';
+  }
+  document.querySelectorAll('.nx').forEach(function(b){b.onclick=function(){go(i+1)}});
+  document.querySelectorAll('.pv').forEach(function(b){b.onclick=function(){go(i-1)}});
+  document.querySelectorAll('.to').forEach(function(e){e.textContent=String(n).padStart(2,'0')});
+  document.querySelectorAll('[data-go]').forEach(function(e){e.onclick=function(){go(+e.getAttribute('data-go'))}});
+  document.querySelectorAll('.mo,.mo2').forEach(function(e){e.onclick=function(){menu.classList.add('open')}});
+  document.getElementById('mx').onclick=function(){menu.classList.remove('open')};
+
+  document.addEventListener('keydown',function(e){
+    if(menu.classList.contains('open')){ if(e.key==='Escape')menu.classList.remove('open'); return; }
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(i+1)}
+    if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(i-1)}
+    if(e.key==='Home'){e.preventDefault();go(0)}
+    if(e.key==='End'){e.preventDefault();go(n-1)}
+    if(e.key==='m'||e.key==='M')menu.classList.add('open');
+  });
+  var x0=null,y0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)){dx<0?go(i+1):go(i-1)} x0=null;y0=null;
+  },{passive:true});
+
+  /* ══ cursor desenhado ══ */
+  if(!window.matchMedia('(pointer:coarse)').matches){
+    var c=document.getElementById('cur'), d=document.getElementById('dot'), p=document.getElementById('ptr');
+    var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my,dx2=mx,dy2=my,px=mx,py=my,on=false;
+    var H='button,a,.chip,.row,.step,.cd,.ml li,.li,.fnode,.bub,.shot,[data-go]';
+    c.classList.add('off');d.classList.add('off');p.classList.add('off');
+    document.addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;
+      if(!on){on=true;c.classList.remove('off');d.classList.remove('off');p.classList.remove('off')}
+      var t=e.target;
+      document.body.classList.toggle('hot',!!(t&&t.closest&&t.closest(H)));
+    },{passive:true});
+    document.addEventListener('mouseleave',function(){on=false;c.classList.add('off');d.classList.add('off');p.classList.add('off')});
+    (function lp(){
+      cx+=(mx-cx)*.17; cy+=(my-cy)*.17;
+      dx2+=(mx-dx2)*.45; dy2+=(my-dy2)*.45;
+      px+=(mx-px)*.28; py+=(my-py)*.28;
+      c.style.transform='translate3d('+cx+'px,'+cy+'px,0)';
+      d.style.transform='translate3d('+dx2+'px,'+dy2+'px,0)';
+      p.style.transform='translate3d('+px+'px,'+py+'px,0)';
+      requestAnimationFrame(lp);
+    })();
+  }
+
+  /* ══ sequências animadas (passos e fluxos) ══ */
+  var seqT=null;
+  function stopSeq(){ if(seqT){clearTimeout(seqT);seqT=null} }
+  function runSeq(s){
+    stopSeq();
+    var box=s.querySelector('[data-seq],[data-flow]'); if(!box)return;
+    var isFlow=box.hasAttribute('data-flow');
+    var st=[].slice.call(box.querySelectorAll(isFlow?'.fnode':'.step'));
+    if(!st.length)return;
+    st.forEach(function(e){e.classList.remove('act','done')});
+    var k=0;
+    function tick(){
+      st.forEach(function(e,j){
+        e.classList.toggle('act', j===k);
+        if(!isFlow) e.classList.toggle('done', j<k);
+      });
+      var rings=s.querySelectorAll('.cyc');
+      [].forEach.call(rings,function(r,j){r.classList.toggle('hot', j===k)});
+      var last=(k===st.length-1);
+      k=last?0:k+1;
+      seqT=setTimeout(tick, last?2600:1600);
+    }
+    seqT=setTimeout(tick,600);
+  }
+  runSeq(sl[0]); nums(sl[0]);
+  window.__go=go;
+})();
+</script>
+</body>
+</html>
