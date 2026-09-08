@@ -446,6 +446,31 @@ body.hot #ptr{opacity:1}
 .s.on .hubn>g:nth-child(5){animation-delay:.72s}.s.on .hubn>g:nth-child(6){animation-delay:.80s}
 .s.on .hubn>g:nth-child(7){animation-delay:.88s}.s.on .hubn>g:nth-child(8){animation-delay:.96s}
 .s.paper .hubn rect{fill:rgba(11,33,74,.05)}
+
+/* ══════════ PREÇOS ══════════ */
+.pr{font-family:var(--disp);font-weight:900;font-stretch:118%;line-height:1;letter-spacing:-.035em;
+  font-size:clamp(20px,2.35vw,39px);color:var(--org);display:flex;align-items:baseline;flex-wrap:wrap;gap:.05em}
+.pr .c,.pr .u{font-family:var(--mono);font-size:.3em;font-weight:400;letter-spacing:.12em;
+  text-transform:uppercase;opacity:.6;white-space:nowrap}
+.s.org .pr{color:var(--navy-d)}
+.cd.hl .pr,.cd.lm .pr{color:inherit}
+.num .cur{font-family:var(--disp);font-weight:800;font-stretch:100%;font-size:.26em;
+  letter-spacing:-.01em;opacity:.55}
+
+/* ══════════ LETRA DO CLUSTER ══════════ */
+.cd{position:relative}
+.cl{position:absolute;top:clamp(8px,1vw,17px);right:clamp(12px,1.4vw,24px);pointer-events:none;
+  font-family:var(--disp);font-weight:900;font-stretch:125%;line-height:1;
+  font-size:clamp(26px,3.3vw,56px);letter-spacing:-.05em;color:var(--org);opacity:.24}
+.cd.hl .cl,.cd.lm .cl{color:currentColor;opacity:.32}
+.cd .d b{font-weight:600}
+.cd.hl .tag em,.cd.lm .tag em{color:currentColor;opacity:.72}
+
+/* ══════════ BARRA EMPILHADA ══════════ */
+.s.on .stk rect{animation:gx .8s cubic-bezier(.2,.85,.3,1) both;
+  transform-box:fill-box;transform-origin:left center}
+.s.on .stk rect:nth-child(1){animation-delay:.34s}.s.on .stk rect:nth-child(2){animation-delay:.44s}
+.s.on .stk rect:nth-child(3){animation-delay:.54s}.s.on .stk rect:nth-child(4){animation-delay:.64s}
 </style>
 </head>
 <body>
@@ -598,7 +623,7 @@ body.hot #ptr{opacity:1}
         <p class="say fu">Uma agenda <b>trimestral</b> de oportunidades comerciais para transformar espaços, canais e calendário da COOP em <b>experiências vendáveis</b> para a indústria.</p>
         <div class="ctas">
           <button class="cta" data-go="3">Ver a proposta <span class="ar"><svg><use href="#ar"/></svg></span></button>
-          <button class="cta gh" data-go="7">Ir ao modelo comercial</button>
+          <button class="cta gh" data-go="7">Ir ao investimento</button>
         </div>
       </div>
       <div class="gal" style="gap:clamp(8px,1vw,16px)">
@@ -609,7 +634,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv" aria-label="Anterior"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">01</b> / <span class="to">10</span></span><button class="nb nx" aria-label="Próximo"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv" aria-label="Anterior"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">01</b> / <span class="to">14</span></span><button class="nb nx" aria-label="Próximo"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -635,7 +660,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">02</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">02</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -686,7 +711,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">03</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">03</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -700,7 +725,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">04</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">04</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -745,7 +770,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">05</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">05</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -770,7 +795,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">06</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">06</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -820,55 +845,166 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">07</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">07</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
-<!-- ═══════════ 08 · CONTRATAÇÃO ═══════════ -->
+<!-- ═══════════ 08 · AS TRÊS FRENTES ═══════════ -->
 <section class="s org">
-  <div class="meta"><span class="l">Modelo de contratação</span><span class="r">Pacote trimestral + compensação por produção</span></div>
+  <div class="meta"><span class="l">A proposta comercial</span><span class="r">Três frentes · podem andar juntas ou separadas</span></div>
   <div class="hair"></div><div class="bar"></div>
-  <div class="body" style="gap:clamp(10px,1.6vw,26px)">
-    <h2 class="mega xs"><span class="ln"><i>Três cenários.</i></span><span class="ln"><i>Uma <em>regra justa.</em></i></span></h2>
-    <div class="sp">
-      <div class="g g3" style="gap:clamp(10px,1.2vw,20px)">
-        <div class="cd fu"><span class="n">CENÁRIO 01</span><span class="t">Sem venda</span><span class="d">Faturado integralmente pelo desenvolvimento realizado.</span><span class="tag" style="opacity:1"><em>Protege o trabalho intelectual</em></span></div>
-        <div class="cd fu"><span class="n">CENÁRIO 02</span><span class="t">Venda parcial</span><span class="d">Compensação proporcional ao volume produzido.</span><span class="tag" style="opacity:1"><em>Mantém justiça comercial</em></span></div>
-        <div class="cd fu"><span class="n">CENÁRIO 03</span><span class="t">Gatilho atingido</span><span class="d">Compensado conforme o volume mínimo acordado.</span><span class="tag" style="opacity:1"><em>Escala produção e execução</em></span></div>
-      </div>
-      <div class="fig">
-        <svg viewBox="0 0 340 250" role="img" aria-label="Nível de compensação do pacote em cada cenário">
-          <line class="ax" x1="26" y1="200" x2="326" y2="200"/>
-          <line class="axd" x1="26" y1="60" x2="326" y2="60"/>
-          <text x="26" y="52" class="axl" style="opacity:.85;fill:#06152F">Gatilho mínimo</text>
-          <g fill="#06152F">
-            <rect class="gb" x="48" y="182" width="58" height="18" rx="3" opacity=".3" style="animation-delay:.35s"/>
-            <rect class="gb" x="140" y="120" width="58" height="80" rx="3" opacity=".62" style="animation-delay:.5s"/>
-            <rect class="gb" x="232" y="52" width="58" height="148" rx="3" style="animation-delay:.65s"/>
-          </g>
-          <g style="font-family:Archivo,sans-serif;font-weight:900;font-size:11px;fill:#06152F">
-            <text x="77" y="174" text-anchor="middle">ZERO</text>
-            <text x="169" y="112" text-anchor="middle">PROPORCIONAL</text>
-            <text x="261" y="44" text-anchor="middle">TOTAL</text>
-          </g>
-          <g class="axl" style="opacity:.75;fill:#06152F">
-            <text x="77" y="218" text-anchor="middle">Sem venda</text>
-            <text x="169" y="218" text-anchor="middle">Venda parcial</text>
-            <text x="261" y="218" text-anchor="middle">Gatilho</text>
-          </g>
-          <text x="176" y="242" text-anchor="middle" class="axl" style="opacity:.6;fill:#06152F">Compensação do pacote trimestral</text>
-        </svg>
-      </div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Três frentes.</i></span><span class="ln"><i>Uma <em>parceria.</em></i></span></h2>
+    <div class="g g3">
+      <div class="cd fu"><span class="ic"><svg><use href="#k-layers"/></svg></span><span class="n">FRENTE 01</span><span class="t">MPDVs</span>
+        <span class="pr"><span class="c">a partir de R$</span>7.000</span>
+        <span class="d">Materiais de ponto de venda desenvolvidos por complexidade — clusters P, M e G.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-doc"/></svg></span><span class="n">FRENTE 02</span><span class="t">Mídia Kit</span>
+        <span class="pr"><span class="c">R$</span>35.000</span>
+        <span class="d">Mapeamento das oportunidades em loja e desenho dos formatos de mídia vendáveis.</span></div>
+      <div class="cd fu"><span class="ic"><svg><use href="#k-cycle"/></svg></span><span class="n">FRENTE 03</span><span class="t">Fee 12 meses</span>
+        <span class="pr"><span class="c">a partir de R$</span>25.000<span class="u">/mês</span></span>
+        <span class="d">Squad dedicado com franquia de horas — a 75 LAB dentro da operação da COOP.</span></div>
     </div>
-    <div class="chips" style="align-items:center">
-      <span class="tag">Como se forma o investimento</span>
-      <span class="chip on">Pacote trimestral · fixo</span><span class="chip">Produção</span>
-      <span class="chip">Instalação e logística</span><span class="chip">Operação e mensuração</span>
+    <p class="say w fu">A COOP pode contratar <b>por projeto</b>, começar pelo <b>Mídia Kit</b> ou colocar a 75 LAB <b>dentro de casa</b> pelo fee. As três frentes se somam sem se sobrepor.</p>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">08</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 · FRENTE 01 · MPDVs ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Frente 01 · Proposta de MPDVs</span><span class="r">Três clusters por complexidade</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega xs"><span class="ln"><i>Material de PDV</i></span><span class="ln"><i>por <em>complexidade.</em></i></span></h2>
+    <div class="g g3">
+      <div class="cd fu"><span class="cl">P</span><span class="ic sm"><svg><use href="#k-tag"/></svg></span>
+        <span class="t">Cluster P</span><span class="pr"><span class="c">R$</span>7.000</span>
+        <span class="d">Até <b>3 MPDVs leves</b> — stopper, wobbler, faixa de gôndola, testeira, régua, adesivo ou cartaz.</span>
+        <span class="tag" style="opacity:1"><em>Conceito, desdobramentos, apresentação e arquivos finais</em></span></div>
+      <div class="cd fu"><span class="cl">M</span><span class="ic sm"><svg><use href="#k-shelf"/></svg></span>
+        <span class="t">Cluster M</span><span class="pr"><span class="c">R$</span>17.000</span>
+        <span class="d">Tudo do Cluster P + <b>1 display</b> e <b>1 ponta de gôndola</b>.</span>
+        <span class="tag" style="opacity:1"><em>Estudos visuais, renders 3D conceituais e arquivos para detalhamento</em></span></div>
+      <div class="cd hl fu"><span class="cl">G</span><span class="ic sm"><svg><use href="#k-flag"/></svg></span>
+        <span class="t">Cluster G</span><span class="pr"><span class="c">R$</span>34.000</span>
+        <span class="d">Projetos de maior complexidade — <b>ativações, feiras, stands e eventos</b>.</span>
+        <span class="tag" style="opacity:1"><em>Diagnóstico, jornada do público, estudo espacial, renders 3D e memorial</em></span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">09</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 10 · FRENTE 02 · MÍDIA KIT ═══════════ -->
+<section class="s paper">
+  <div class="meta"><span class="l">Frente 02 · Mídia Kit</span><span class="r">Mapeamento em loja + formatos de mídia</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <div class="sp">
+      <div class="bn">
+        <span class="kicker">Investimento total</span>
+        <span class="num mid" style="display:flex;align-items:baseline;gap:.04em"><span class="cur">R$</span><span data-n="35000" data-f>0</span></span>
+        <p class="say sm">Mapeamento das oportunidades dentro das lojas e desenvolvimento dos <b>formatos de mídia</b> classificados em P, M e G.</p>
+      </div>
+      <div class="stack">
+        <div class="rows">
+          <div class="row"><span class="k">Visita e mapeamento · até 3 lojas</span><span class="v">R$ 7.000</span></div>
+          <div class="row"><span class="k">Desenvolvimento Cluster P</span><span class="v">R$ 7.000</span></div>
+          <div class="row"><span class="k">Desenvolvimento Cluster M</span><span class="v">R$ 9.300</span></div>
+          <div class="row"><span class="k">Desenvolvimento Cluster G</span><span class="v">R$ 11.700</span></div>
+          <div class="row"><span class="k">Total da frente</span><span class="v"><em>R$ 35.000</em></span></div>
+        </div>
+        <div class="fig">
+          <svg viewBox="0 0 560 46" role="img" aria-label="Composição do investimento do Mídia Kit">
+            <g class="stk">
+              <rect x="0"     y="0" width="112"   height="22" rx="3" fill="var(--org)" opacity=".42"/>
+              <rect x="114"   y="0" width="112"   height="22" rx="3" fill="var(--org)" opacity=".62"/>
+              <rect x="228"   y="0" width="146.8" height="22" rx="3" fill="var(--org)" opacity=".82"/>
+              <rect x="376.8" y="0" width="183.2" height="22" rx="3" fill="var(--org)"/>
+            </g>
+            <g class="axl" style="opacity:.72">
+              <text x="0" y="38">Mapeamento</text><text x="114" y="38">Cluster P</text>
+              <text x="228" y="38">Cluster M</text><text x="376.8" y="38">Cluster G</text>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-black.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">08</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">10</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 11 · FRENTE 03 · FEE ═══════════ -->
+<section class="s">
+  <div class="meta"><span class="l">Frente 03 · Fee de atendimento · 12 meses</span><span class="r">O que muda é a franquia de horas de squad</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body" style="gap:clamp(10px,1.6vw,26px)">
+    <h2 class="mega xs"><span class="ln"><i>Três tamanhos.</i></span><span class="ln"><i>Um mesmo <em>padrão.</em></i></span></h2>
+    <div class="g g3">
+      <div class="cd fu"><span class="cl">P</span><span class="n">40 H DE SQUAD / MÊS</span>
+        <span class="pr"><span class="c">R$</span>25.000<span class="u">/mês</span></span>
+        <span class="d">O squad se molda ao pedido: 3D, evento, web, stand — os profissionais certos para cada demanda.</span>
+        <span class="tag" style="opacity:1"><em>Maior equilíbrio hora × investimento</em></span></div>
+      <div class="cd fu"><span class="cl">M</span><span class="n">80 H DE SQUAD / MÊS</span>
+        <span class="pr"><span class="c">R$</span>48.000<span class="u">/mês</span></span>
+        <span class="d">O dobro de capacidade, com frentes simultâneas: PDV + canal + digital.</span>
+        <span class="tag" style="opacity:1"><em>Prioridade nos picos de calendário</em></span></div>
+      <div class="cd hl fu"><span class="cl">G</span><span class="n">160 H / MÊS · FULL TIME</span>
+        <span class="pr"><span class="c">R$</span>67.000<span class="u">/mês</span></span>
+        <span class="d">Capacidade de agência inteira dedicada ao calendário da COOP, o ano de trade ponta a ponta.</span>
+        <span class="tag" style="opacity:1"><em>Melhor custo por hora dos três formatos</em></span></div>
+    </div>
+    <div class="rows thin">
+      <div class="row"><span class="k">Incluído nos três formatos</span><span class="v">Atendimento exclusivo full time · Estratégia, Design e Produção (cotação) · squads sob medida</span></div>
+      <div class="row"><span class="k">Hora extra</span><span class="v"><em>R$ 700 / hora</em> — ou upgrade de pacote</span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">11</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ═══════════ 12 · CRÉDITO DE PRODUÇÃO ═══════════ -->
+<section class="s deep">
+  <div class="meta"><span class="l">Crédito de produção</span><span class="r">Frente 03 · como o fee se paga</span></div>
+  <div class="hair"></div><div class="bar"></div>
+  <div class="body">
+    <h2 class="mega sm"><span class="ln"><i>O fee pode</i></span><span class="ln"><i>sair <em>de graça.</em></i></span></h2>
+    <div class="sp">
+      <p class="say w">A cada <b>R$ 315.000</b> em produção executada com a 75 LAB — materiais gráficos, displays, expositores — a COOP gera <b>R$ 25.000 de crédito em serviços</b>. Havendo produção recorrente, o fee se paga.</p>
+      <div class="fig">
+        <svg viewBox="0 0 520 150" role="img" aria-label="A cada R$ 315.000 em produção, R$ 25.000 de crédito em serviços">
+          <rect x="0" y="34" width="212" height="60" rx="6" fill="rgba(255,248,239,.08)" stroke="currentColor" stroke-opacity=".22"/>
+          <text x="106" y="60" text-anchor="middle" class="axl">Produção executada</text>
+          <text x="106" y="82" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:19px;fill:currentColor;letter-spacing:-.03em">R$ 315.000</text>
+          <path class="i-flow" d="M224 64h64" stroke="var(--org)" stroke-width="2.4" fill="none"/>
+          <path d="M282 58l8 6-8 6" stroke="var(--org)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="298" y="34" width="212" height="60" rx="6" fill="var(--org)"/>
+          <rect x="298" y="34" width="212" height="60" rx="6" fill="none" stroke="var(--org)" stroke-width="1.4" class="bhalo"/>
+          <text x="404" y="60" text-anchor="middle" class="axl" style="fill:#06152F;opacity:.8">Crédito em serviços</text>
+          <text x="404" y="82" text-anchor="middle" style="font-family:Archivo,sans-serif;font-weight:900;font-size:19px;fill:#06152F;letter-spacing:-.03em">R$ 25.000</text>
+          <text x="260" y="128" text-anchor="middle" class="axl" style="opacity:.55">Equivale ao fee do formato P por um mês</text>
+        </svg>
+      </div>
+    </div>
+    <div class="rows thin">
+      <div class="row"><span class="k">Sistemas e organização</span><span class="v">Repositório de todos os materiais criados — histórico, versões e arquivos acessíveis</span></div>
+      <div class="row"><span class="k">Plataformas dentro do fee</span><span class="v"><em>Incentivo e treinamento sem contratação à parte</em></span></div>
+    </div>
+  </div>
+  <div class="fo">
+    <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">12</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -891,7 +1027,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">09</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">13</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -911,7 +1047,7 @@ body.hot #ptr{opacity:1}
   </div>
   <div class="fo">
     <div class="bd"><img src="assets/75lab-wordmark-paper.png" alt="75 LAB"><span class="x">×</span><span class="n">COOP</span></div>
-    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">10</b> / <span class="to">10</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
+    <div class="nav"><button class="mbtn mo"><svg><use href="#mn"/></svg>Índice</button><button class="nb pv"><svg><use href="#al"/></svg></button><span class="pg"><b class="cu">14</b> / <span class="to">14</span></span><button class="nb nx"><svg><use href="#ar"/></svg></button></div>
   </div>
 </section>
 
@@ -932,10 +1068,14 @@ body.hot #ptr{opacity:1}
     "O modelo · ciclo trimestral",
     "O que entra no pacote",
     "Jornada do shopper",
-    "Modelo de contratação",
+    "A proposta · três frentes",
+    "Frente 01 · MPDVs",
+    "Frente 02 · Mídia Kit",
+    "Frente 03 · Fee 12 meses",
+    "O fee pode sair de graça",
     "Plano de 90 dias",
     "COOP × 75 LAB"];
-  var HD=[0,1,3,9];
+  var HD=[0,1,3,7,13];
   var sl=[].slice.call(document.querySelectorAll('.s')), i=0, n=sl.length;
   var menu=document.getElementById('menu'), ml=document.getElementById('mlist'), pro=document.getElementById('pro');
 
@@ -964,7 +1104,7 @@ body.hot #ptr{opacity:1}
     });
   }
   function replay(s){
-    s.querySelectorAll('.bar,.ln>i,.fu,.rows>*,.cta,.shot,.dr,.gb,.gt>i,.bub,.ring-fg').forEach(function(e){
+    s.querySelectorAll('.bar,.ln>i,.fu,.rows>*,.cta,.shot,.dr,.gb,.gt>i,.bub,.ring-fg,.stk rect').forEach(function(e){
       var a=e.style.animation; e.style.animation='none'; void e.offsetWidth; e.style.animation=a||'';
     });
   }
